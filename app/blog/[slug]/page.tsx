@@ -25,7 +25,7 @@ interface Props {
 
 export default async function BlogPostPage({ params }: Props) {
     
-    const posts: CodeBoxData[] = await fetch('https://next-13-demo-ktgcreative.vercel.app')
+    const posts: CodeBoxData[] = await fetch('https://next-13-demo-ktgcreative.vercel.app/api/docs')
     .then(res => {
         if (!res.ok) {
             throw new Error('Network response was not ok');
@@ -36,6 +36,10 @@ export default async function BlogPostPage({ params }: Props) {
         console.error('Fetch error:', error);
         return [];
     });
+    const response = await fetch('your-api-url');
+const text = await response.text();
+console.log(text);
+
 
     const currentPost = posts.find(post => post.slug === params.slug);
 
