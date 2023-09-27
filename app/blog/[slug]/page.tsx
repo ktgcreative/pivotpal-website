@@ -25,7 +25,7 @@ interface Props {
 
 export default async function BlogPostPage({ params }: Props) {
     
-    const posts: CodeBoxData[] = await fetch('https://next-13-demo-ktgcreative.vercel.app/api/docs')
+    const posts: CodeBoxData[] = await fetch('https://next-13-demo-phi.vercel.app/api/docs')
     .then(res => {
         if (!res.ok) {
             throw new Error('Network response was not ok');
