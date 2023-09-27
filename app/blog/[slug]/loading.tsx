@@ -1,14 +1,26 @@
-const LoadingSkeleton = () => (
-    <div role="status" className="max-w-sm animate-pulse">
-      <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
-      <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
-      <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-      <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
-      <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
-      <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
-      <span className="sr-only">Loading...</span>
-    </div>
-  );
-  
-  export default LoadingSkeleton;
-  
+import React from 'react';
+
+const LoadingSkeleton: React.FC = () => {
+    return (
+        <section className='md:m-10 lg:m-16 p-4 animate-pulse'>
+            <div className="h-8 bg-gray-200 rounded dark:bg-gray-700 mb-4"></div> {/* Title */}
+            
+            <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-3/4 mb-6"></div> {/* Overview */}
+            <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-2/3 mb-6"></div> {/* Explanation */}
+            
+            <div className="code-container bg-gray-900 p-6 rounded-lg shadow-md overflow-auto ">
+                <pre className="text-white text-sm" style={{ backgroundColor: 'transparent' }}>
+                    <code className="javascript" style={{ backgroundColor: 'transparent' }}>
+                        <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-full mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-3/4 mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-2/3 mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-1/2 mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded dark:bg-gray-700 w-1/4"></div>
+                    </code>
+                </pre>
+            </div>
+        </section>
+    );
+}
+
+export default LoadingSkeleton;
