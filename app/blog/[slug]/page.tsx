@@ -23,8 +23,12 @@ interface Props {
     params: { slug: string }
 }
 
+
+
+
 export default async function BlogPostPage({ params }: Props) {
     
+
     const posts: CodeBoxData[] = await fetch('https://next-13-demo-phi.vercel.app/api/docs')
     .then(res => {
         if (!res.ok) {
@@ -36,6 +40,9 @@ export default async function BlogPostPage({ params }: Props) {
         console.error('Fetch error:', error);
         return [];
     });
+    const response = await fetch('https://next-13-demo-phi.vercel.app/api/docs');
+const text = await response.text();
+console.log(text);
 
 
     const currentPost = posts.find(post => post.slug === params.slug);
@@ -47,7 +54,10 @@ export default async function BlogPostPage({ params }: Props) {
     const nextPost = posts.find(post => post.number === currentPost.number + 1);
     const prevPost = posts.find(post => post.number === currentPost.number - 1);
 
+
+    
     return (
+        
         <div className="p-4">
             {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text={`Back: ${prevPost.slug}`} icon="←" additionalClasses="mr-4" />}
             <NavigationButton href="/" text="Home" additionalClasses="mr-4" />
