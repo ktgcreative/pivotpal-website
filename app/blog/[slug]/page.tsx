@@ -36,9 +36,6 @@ export default async function BlogPostPage({ params }: Props) {
         console.error('Fetch error:', error);
         return [];
     });
-    const response = await fetch('your-api-url');
-const text = await response.text();
-console.log(text);
 
 
     const currentPost = posts.find(post => post.slug === params.slug);
