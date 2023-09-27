@@ -27,22 +27,22 @@ interface Props {
 
 
 export default async function BlogPostPage({ params }: Props) {
-    
+
 
     const posts: CodeBoxData[] = await fetch('https://next-13-demo-phi.vercel.app/api/docs')
-    .then(res => {
-        if (!res.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return res.json();
-    })
-    .catch(error => {
-        console.error('Fetch error:', error);
-        return [];
-    });
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return res.json();
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            return [];
+        });
     const response = await fetch('https://next-13-demo-phi.vercel.app/api/docs');
-const text = await response.text();
-console.log(text);
+    const text = await response.text();
+    console.log(text);
 
 
     const currentPost = posts.find(post => post.slug === params.slug);
@@ -55,14 +55,14 @@ console.log(text);
     const prevPost = posts.find(post => post.number === currentPost.number - 1);
 
 
-    
+
     return (
-        
+
         <div className="p-4">
+            {posts.filter(post => post.slug === params.slug).map(data => <DynamicCodeBox key={data.id} {...data} />)}
             {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text={`Back: ${prevPost.slug}`} icon="←" additionalClasses="mr-4" />}
             <NavigationButton href="/" text="Home" additionalClasses="mr-4" />
             {nextPost && <NavigationButton href={`/blog/${nextPost.slug}`} text={`Next: ${nextPost.slug}`} icon="→" />}
-            {posts.filter(post => post.slug === params.slug).map(data => <DynamicCodeBox key={data.id} {...data} />)}
         </div>
     );
 }
@@ -70,7 +70,7 @@ console.log(text);
 const NavigationButton: React.FC<{ href: string, text: string, icon?: string, additionalClasses?: string }> = ({ href, text, icon, additionalClasses = "" }) => (
     <Link href={href}
         className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200 ease-in-out ${additionalClasses}`}>
-            {icon && `${icon} `}
-            {text}
+        {icon && `${icon} `}
+        {text}
     </Link>
 );
