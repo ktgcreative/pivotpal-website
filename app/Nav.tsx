@@ -20,11 +20,11 @@ export default function Example() {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
+              {/* <img
                 className="h-8 w-auto"
                 src="next.svg"
                 alt=""
-              />
+              /> */}
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -57,11 +57,11 @@ export default function Example() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
+                {/* <img
                   className="h-8 w-auto"
                   src="next.svg"
                   alt=""
-                />
+                /> */}
               </a>
               <button
                 type="button"
