@@ -25,8 +25,11 @@ interface Props {
 
 export default async function BlogPostPage({ params }: Props) {
     
-    const posts: CodeBoxData[] = await fetch('http://localhost:3000/api/docs').then(res => res.json());
-
+    const isLocal = window.location.hostname === "localhost";
+    const baseURL = isLocal ? 'http://localhost:3000' : 'https://next-13-demo-ktgcreative.vercel.app';
+    
+    const posts: CodeBoxData[] = await fetch(`${baseURL}/api/docs`).then(res => res.json());
+    
     const currentPost = posts.find(post => post.slug === params.slug);
 
     if (!currentPost) {
