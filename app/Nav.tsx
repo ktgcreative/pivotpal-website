@@ -8,7 +8,6 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Functions', href: '/functions' },
-  { name: 'Tailwind', href: '/blog/tailwind-css' },
 ]
 
 export default function Example() {
