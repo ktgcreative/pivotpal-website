@@ -56,16 +56,11 @@ export default async function BlogPostPage({ params }: Props) {
 
     return (
 
-        <div className="p-4">
-            {posts.map(data => <DynamicCodeBox key={data.id} {...data} />)}           
-        </div>
+        <div className="container mx-auto p-4">
+        {posts.map(post => (
+            <DynamicCodeBox key={post.id} {...post} />
+        ))}
+    </div>
     );
 }
 
-const NavigationButton: React.FC<{ href: string, text: string, icon?: string, additionalClasses?: string }> = ({ href, text, icon, additionalClasses = "" }) => (
-    <Link href={href}
-        className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200 ease-in-out ${additionalClasses}`}>
-        {icon && `${icon} `}
-        {text}
-    </Link>
-);

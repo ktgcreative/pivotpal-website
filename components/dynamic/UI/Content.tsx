@@ -35,7 +35,7 @@ const ContentSection: React.FC<ContentProps> = ({ title, paragraphs, images }) =
             <p key={index} className={index === 0 ? "mb-4" : ""}>{paragraph}</p>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-8">
+        <div className="gap-4 mt-8">
           <DynamicTable columns={tableData}/>
           {/* <DynamicTable columns={tableData}/> */}
         </div>
