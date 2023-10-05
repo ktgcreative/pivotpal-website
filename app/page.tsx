@@ -177,9 +177,9 @@ const tutorialItems = [
         title={'Accelerate Your Data Analysis with a Single Import.'}
         subtitle={'pip import PivotPal'}
         description={'Break free from the limitations of traditional spreadsheet tools. With PivotPal, harness the power of Python to transform, analyze, and visualize your data seamlessly.'}
-        primaryButtonText={'Start Learning'}
+        primaryButtonText={'Discover Features'}
         primaryButtonLink={'/functions'}
-        secondaryButtonText={'Why PivotPal?'}
+        secondaryButtonText={'Why Use PivotPal?'}
         secondaryButtonLink={'/about'}
       />
 
