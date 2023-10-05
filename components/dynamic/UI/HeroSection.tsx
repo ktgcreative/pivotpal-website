@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     slug={''}
                     id={''}
                     codeContent={`!wget https://raw.githubusercontent.com/ktgcreative/pivotpal/main/pivotpal.py
-pivotpal as pp`}
+import pivotpal as pp`}
                 />
 
                 <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{description}</p>
