@@ -174,9 +174,9 @@ const tutorialItems = [
     <>
       <HeroSection
         id='getStarted'
-        title={'Welcome, PivotPal...'}
+        title={'Accelerate Your Data Analysis with a Single Import.'}
         subtitle={'pip import PivotPal'}
-        description={'Transition from traditional web tools like Wix and WordPress to Next.js. Dive into modern web development and enhance group collaboration.'}
+        description={'Break free from the limitations of traditional spreadsheet tools. With PivotPal, harness the power of Python to transform, analyze, and visualize your data seamlessly.'}
         primaryButtonText={'Start Learning'}
         primaryButtonLink={'/functions'}
         secondaryButtonText={'Why PivotPal?'}
