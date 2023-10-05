@@ -29,7 +29,11 @@ interface Props {
 export default async function BlogPostPage({ params }: Props) {
 
 
-    const posts: CodeBoxData[] = await fetch('http://localhost:3000/api/docs')
+    const apiUrl = process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3000/api/docs' 
+    : 'https://pivotpal.vercel.app/api/docs';
+
+const posts: CodeBoxData[] = await fetch(apiUrl)
     .then(res => {
         if (!res.ok) {
             throw new Error('Network response was not ok');
@@ -44,7 +48,7 @@ export default async function BlogPostPage({ params }: Props) {
 
 
 
-    const response = await fetch('http://localhost:3000/api/docs');
+    const response = await fetch(apiUrl);
     const text = await response.text();
     
 
