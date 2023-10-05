@@ -33,7 +33,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     number={0}
                     slug={''}
                     id={''}
-                    codeContent={'!wget https://raw.githubusercontent.com/ktgcreative/pivotpal/main/pivotpal.py'}
+                    codeContent={`
+                    !wget https://raw.githubusercontent.com/ktgcreative/pivotpal/main/pivotpal.py
+                    pivotpal as pp`}
                 />
                 <DynamicCodeBox
                     number={0}
