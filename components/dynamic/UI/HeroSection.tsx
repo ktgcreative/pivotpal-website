@@ -34,7 +34,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     slug={''}
                     id={''}
                     codeContent={`
-
 !wget https://raw.githubusercontent.com/ktgcreative/pivotpal/main/pivotpal.py
 
 import pivotpal as pp
