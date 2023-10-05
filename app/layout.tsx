@@ -19,7 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Nav />
-        {children}</body>
+      <div className="py-8 px-4 mx-auto max-w-screen-xl  lg:py-16">
+        {children}
+        </div>
+        </body>
     </html>
   )
 }

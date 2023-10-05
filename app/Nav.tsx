@@ -2,12 +2,13 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { title } from 'process'
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Components', href: '/react-components' },
-  { name: 'Tailwind', href: '/tailwind' },
+  { name: 'Functions', href: '/functions' },
+  { name: 'Tailwind', href: '/blog/tailwind-css' },
 ]
 
 export default function Example() {
@@ -19,12 +20,9 @@ export default function Example() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              {/* <img
-                className="h-8 w-auto"
-                src="next.svg"
-                alt=""
-              /> */}
+              <span className="sr-only">PivotPal.</span>
+              <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">PivotPal.</h1>
+           
             </a>
           </div>
           <div className="flex lg:hidden">

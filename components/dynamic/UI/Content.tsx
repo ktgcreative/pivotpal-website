@@ -1,4 +1,5 @@
 import React from 'react';
+import DynamicTable from '../coding/DynamicTable';
 
 interface ContentProps {
   title: string;
@@ -8,6 +9,21 @@ interface ContentProps {
     alt: string;
   }[];
 }
+
+const tableData = [
+  {
+    columnName: 'Feature',
+    data: ['FoodCourt', 'Spa', 'VRDeck', 'RoomService', 'ShoppingMall']
+  },
+  {
+    columnName: 'Total',
+    data: ['3,898,237.0', '2,647,791.0', '2,592,790.0', '1,912,541.0', '1,474,092.0']
+  },
+  {
+    columnName: 'Distribution (%)',
+    data: ['31.12', '21.14', '20.70', '15.27', '11.77']
+  }
+];
 
 const ContentSection: React.FC<ContentProps> = ({ title, paragraphs, images }) => {
   return (
@@ -20,9 +36,8 @@ const ContentSection: React.FC<ContentProps> = ({ title, paragraphs, images }) =
           ))}
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
-          {images.map((image, index) => (
-            <img key={index} className={`${index === 1 ? "mt-4 w-full lg:mt-10" : "w-full"} rounded-lg`} src={image.src} alt={image.alt} />
-          ))}
+          <DynamicTable columns={tableData}/>
+          {/* <DynamicTable columns={tableData}/> */}
         </div>
       </div>
     </section>

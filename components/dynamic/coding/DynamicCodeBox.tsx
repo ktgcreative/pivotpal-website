@@ -4,11 +4,13 @@ import hljs from 'highlight.js';
 import 'components/styles/github-dark.min.css' // You can choose another theme if you prefer
 
 interface CodeSectionProps {
-  codeContent: string;
-  title: string;
-  overview?: string;    // Overview is mandatory
-  explanation?: string;  // Explanation is optional
-  id?: string;          // Optional id prop
+    number: number;
+    slug: string;
+    id: string;
+    title?: string;
+    overview?: string;
+    explanation?: string;
+    codeContent: string;     // Optional id prop
 }
 
 const CodeSection: React.FC<CodeSectionProps> = ({ codeContent, title, overview, explanation, id }) => {

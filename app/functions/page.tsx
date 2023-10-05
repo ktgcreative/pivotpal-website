@@ -49,27 +49,12 @@ export default async function BlogPostPage({ params }: Props) {
     
 
 
-    const currentPost = posts.find(post => post.slug === params.slug);
-
-    if (!currentPost) {
-        return <div>Post not found!</div>;
-    }
-
-    const nextPost = posts.find(post => post.number === currentPost.number + 1);
-    const prevPost = posts.find(post => post.number === currentPost.number - 1);
-
-
 
     return (
 
         <div className="p-4">
-        {posts.filter(post => post.slug === params.slug).map(data => <DynamicCodeBox key={data.id} {...data} />)}
-        <div className="flex justify-center items-center mt-4 space-x-4">
-            {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text={`Back: ${prevPost.slug}`} icon="←" />}
-            <NavigationButton href="/" text="Home" />
-            {nextPost && <NavigationButton href={`/blog/${nextPost.slug}`} text={`Next: ${nextPost.slug}`} icon="→" />}
+            {posts.map(data => <DynamicCodeBox key={data.id} {...data} />)}           
         </div>
-    </div>
     );
 }
 
