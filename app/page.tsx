@@ -49,7 +49,7 @@ export default function Home() {
   const lineData = [
     {
       date: "Function 1",
-      title: "helper(value=None)",
+      title: "helper()",
       description: "Provides a list of available functions in PivotPal and their descriptions.",
       link: "/blog/pivotpal-helper",
       linkText: "Understand the Helper"
