@@ -1,0 +1,16 @@
+/* styles/SimpleHighlight.css */
+.code-container .keyword {
+    color: #C678DD;
+}
+
+.code-container .function {
+    color: #61AFEF;
+}
+
+.code-container .string {
+    color: #98C379;
+}
+
+.code-container .number {
+    color: #D19A66;
+}

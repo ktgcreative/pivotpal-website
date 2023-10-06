@@ -1,10 +1,7 @@
 import ContentSection from '@/components/dynamic/UI/Content'
 import HeroSection from '@/components/dynamic/UI/HeroSection'
 import Timeline from '@/components/dynamic/UI/TimeLine';
-import TutorialSection from '@/components/dynamic/UI/Tutorial';
-import DynamicCodeBox from '@/components/dynamic/coding/DynamicCodeBox';
-import DynamicTable from '@/components/dynamic/coding/DynamicTable';
-import Image from 'next/image'
+
 
 export default function Home() {
 
@@ -179,7 +176,7 @@ const tutorialItems = [
         description={'Break free from the repetitive code of data analytics tools. With PivotPal, harness the power of Python to transform, analyze, and visualize your data seamlessly.'}
         primaryButtonText={'Discover Features'}
         primaryButtonLink={'/functions'}
-        secondaryButtonText={'Why Use PivotPal?'}
+        secondaryButtonText={'Go to the repo'}
         secondaryButtonLink={'/about'}
       />
 

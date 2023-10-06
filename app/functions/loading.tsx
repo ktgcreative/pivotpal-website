@@ -3,7 +3,6 @@ import React from 'react';
 const LoadingSkeleton: React.FC = () => {
     return (
       <div className="p-4">
-        
         <section className='md:m-10 lg:m-16 p-4 animate-pulse'>
             <div className="h-8 bg-gray-200 rounded dark:bg-gray-700 mb-4 w-1/2"></div> {/* Title */}
             
