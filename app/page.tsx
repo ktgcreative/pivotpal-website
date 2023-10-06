@@ -175,7 +175,7 @@ const tutorialItems = [
     <>
       <HeroSection
         id='getStarted'
-        title={''}
+        title={'Accelerate your Data Analysis with a Single Import:'}
         subtitle={''}
         description={''}
         primaryButtonText={'Discover Features'}
