@@ -175,9 +175,9 @@ const tutorialItems = [
     <>
       <HeroSection
         id='getStarted'
-        title={'Accelerate Your Data Analysis with a Single Import.'}
-        subtitle={'pip import PivotPal'}
-        description={'Break free from the repetitive code of data analytics tools. With PivotPal, harness the power of Python to transform, analyze, and visualize your data seamlessly.'}
+        title={''}
+        subtitle={''}
+        description={''}
         primaryButtonText={'Discover Features'}
         primaryButtonLink={'/functions'}
         secondaryButtonText={'Go to the repo'}
