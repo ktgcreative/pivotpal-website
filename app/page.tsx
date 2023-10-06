@@ -1,6 +1,8 @@
 import ContentSection from '@/components/dynamic/UI/Content'
 import HeroSection from '@/components/dynamic/UI/HeroSection'
 import Timeline from '@/components/dynamic/UI/TimeLine';
+import TutorialSection from '@/components/dynamic/UI/Tutorial';
+import Introduction from '@/components/dynamic/coding/Introduction';
 
 
 export default function Home() {
@@ -116,20 +118,22 @@ export default function Home() {
 
   const mainTutorialItem = {
     badgeText: "Tutorial",
-    badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-      <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" /></svg>,
-    title: "Getting Started with PivotPal",
-    description: "PivotPal is a powerful Python package designed to simplify and enhance data analysis. Dive into its features and learn how to make the most of it.",
-    link: "#",
-    linkText: "Learn More"
+    badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
+  </svg>,
+    title: "Analyzing the Titanic Dataset with PivotPal",
+    description: "Discover the power of PivotPal in analyzing the Titanic dataset. Uncover insights, handle missing values, and engineer features to predict survival rates.",
+    link: "/titanic",
+    linkText: "Dive In"
 };
+
 
 const tutorialItems = [
     {
       badgeText: "Data Analysis",
-      badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-        <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
-      </svg>,
+      badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
+    </svg>,
       title: "Visualizing Data with PivotPal",
       description: "Discover how PivotPal can assist you in visualizing and understanding complex datasets with ease.",
       link: "#data-analysis",
@@ -194,9 +198,14 @@ const tutorialItems = [
         ]} />
 
       <div className="py-8 px-4 mx-auto max-w-screen-xl  lg:py-16">
-        {/* <TutorialSection mainItem={mainTutorialItem} tutorialItems={tutorialItems} /> */}
+        <TutorialSection mainItem={mainTutorialItem} tutorialItems={tutorialItems} />
       
 </div>
+<Introduction
+                topic="PivotPal: A Comprehensive Data Analysis Tool"
+                overview="PivotPal is a Python package designed to simplify common data analysis tasks, such as summarising large datasets, discovering patterns in distributions and finding missing values. It provides a set of functions that allow users to quickly generate insights from their data without the need for extensive coding. From understanding data distributions to identifying missing values, PivotPal offers a streamlined approach to data exploration."
+                steps={[]}
+            />
 <Timeline id='getStarted' items={lineData} />
     </>
   )

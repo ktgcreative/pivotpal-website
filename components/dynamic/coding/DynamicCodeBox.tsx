@@ -1,6 +1,7 @@
 import React from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/components/prism-python';  // Import the Python language definition
 
 interface CodeSectionProps {
     number: number;
@@ -13,7 +14,7 @@ interface CodeSectionProps {
 }
 
 const CodeSection: React.FC<CodeSectionProps> = ({ codeContent, title, overview, explanation, id }) => {
-    const highlightedCode = Prism.highlight(codeContent, Prism.languages.javascript, 'javascript');
+    const highlightedCode = Prism.highlight(codeContent, Prism.languages.python, 'python');  // Use 'python' here
 
     return (
         <section id={id} className='md:m-10 lg:m-16 p-4'>
@@ -32,7 +33,7 @@ const CodeSection: React.FC<CodeSectionProps> = ({ codeContent, title, overview,
 
             <div className="code-container bg-gray-900 p-6 rounded-lg shadow-md overflow-auto">
                 <pre className="text-white text-sm">
-                    <code className="language-javascript" dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
+                    <code className="language-python" dangerouslySetInnerHTML={{ __html: highlightedCode }}></code> 
                 </pre>
             </div>
         </section>

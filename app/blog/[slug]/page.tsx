@@ -73,8 +73,8 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <div className="p-5">
             {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text="Prev" />}
-            </div>
-            <div className="p-5">
+            
+            
             {nextPost && <NavigationButton href={`/blog/${nextPost.slug}`} text="Next" />}
             </div>
         </div>
