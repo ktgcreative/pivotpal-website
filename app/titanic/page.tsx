@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
                 ]}
             />
 
-{posts.map(post => (
+            {posts.map(post => (
                 <DynamicCodeBox key={post.id} {...post} />
             ))}
         </div>
