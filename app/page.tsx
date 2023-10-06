@@ -180,7 +180,7 @@ const tutorialItems = [
         description={''}
         primaryButtonText={'Discover Features'}
         primaryButtonLink={'/functions'}
-        secondaryButtonText={'Go to the repo'}
+        secondaryButtonText={'Go to the Repo'}
         secondaryButtonLink={'/about'}
       />
 
