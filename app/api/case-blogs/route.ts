@@ -24,6 +24,50 @@ const DYNAMIC_CODEBOX_DATA = [
         tableSummary: "Summary of the table data for post 1."
     },
     {
+        "number": 2,
+        "slug": "titanic",
+        "id": "titanic-id-2",
+        "title": "Exploring Missing Data in the Titanic Dataset",
+        "overview": "A deep dive into the missing data within the Titanic dataset using the PivotPal Python package.",
+        "explanation": "The Titanic dataset is one of the most popular datasets used in data science. It contains information about the passengers onboard the Titanic, including their age, cabin, and embarkation point. In this exploration, we'll focus on identifying and understanding the missing data within this dataset.",
+        "codeContent": "pp.missing(df)",
+        "tableData": [
+            {
+                "columnName": "Column Name",
+                "data": ["Cabin", "Age", "Embarked"]
+            },
+            {
+                "columnName": "Missing Count",
+                "data": ["687", "177", "2"]
+            },
+            {
+                "columnName": "Missing %",
+                "data": ["77.0", "20.0", "0.0"]
+            }
+        ],
+        "tableSummary": "The table above showcases the columns in the Titanic dataset with missing values. The 'Cabin' column has the highest number of missing values, with 687 missing entries, accounting for 77% of the total data. The 'Age' column has 177 missing values, which is 20% of the data. Lastly, the 'Embarked' column has only 2 missing values, making up 0% of the dataset."
+    },
+    {
+        "number": 3,
+        "slug": "titanic",
+        "id": "titanic-id-3",
+        "title": "Exploring Unique Data Values in the Titanic Dataset",
+        "overview": "A comprehensive look at the unique data values within the Titanic dataset using the PivotPal Python package.",
+        "explanation": "The Titanic dataset provides a wealth of information about the passengers onboard. One of the key steps in data exploration is understanding the uniqueness of data values. In this exploration, we'll identify and understand the unique values present in each column of the Titanic dataset.",
+        "codeContent": "pp.unique(df)",
+        "tableData": [
+            {
+                "columnName": "Column Name",
+                "data": ["PassengerId", "Name", "Ticket", "Fare", "Cabin", "Age", "SibSp", "Parch", "Pclass", "Embarked", "Survived", "Sex"]
+            },
+            {
+                "columnName": "Unique Count",
+                "data": ["891", "891", "681", "248", "147", "88", "7", "7", "3", "3", "2", "2"]
+            }
+        ],
+        "tableSummary": "The table above highlights the unique data values in each column of the Titanic dataset. Columns like 'PassengerId' and 'Name' have unique values for each entry, while columns like 'Sex' and 'Survived' have only 2 unique values. This information is crucial for understanding the distribution and diversity of data within the dataset."
+    },    
+    {
         number: 2,
         slug: "sample-slug-2",
         id: "sample-id-2",

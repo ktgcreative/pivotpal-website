@@ -7,13 +7,11 @@ interface CodeBoxData {
     number: number;
     slug: string;
     id: string;
-    title: string;
+    title?: string;
     overview?: string;
     explanation?: string;
     codeContent: string;
-    tableSummary?: string;
 }
-
 
 interface IntroductionData {
     number: number;
@@ -34,21 +32,21 @@ export default async function BlogPostPage({ params }: Props) {
 
 
     const apiUrl = process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000/api/docs'
-        : 'https://pivotpal.vercel.app/api/docs';
+        ? 'http://localhost:3000/api/case-blogs'
+        : 'https://pivotpal.vercel.app/api/case-blogs';
 
-    const posts: CodeBoxData[] = await fetch(apiUrl)
+        const posts: CodeBoxData[] = await fetch(apiUrl)
         .then(res => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
             }
             return res.json();
         })
-        .then(data => data[0])  // Extract the inner array
         .catch(error => {
             console.error('Fetch error:', error);
             return [];
         });
+    
 
 
 
@@ -71,9 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
     return (
         <div className="p-4">
             
-            {posts.map(post => (
-                <DataStream key={post.id} {...post} />
-            ))}
+            {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
             <div className="flex justify-center items-center mt-4 space-x-4">
             </div>
             <div className="p-5">
