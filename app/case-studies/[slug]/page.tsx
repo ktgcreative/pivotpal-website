@@ -29,32 +29,34 @@ interface Props {
 
 
 export default async function BlogPostPage({ params }: Props) {
+
+
     const apiUrl = process.env.NODE_ENV === 'development'
         ? 'http://localhost:3000/api/case-blogs'
         : 'https://pivotpal.vercel.app/api/case-blogs';
 
-    const fetchData = async () => {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return await response.json();
-    };
+    const posts: CodeBoxData[] = await fetch(apiUrl)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return res.json();
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            return [];
+        });
 
-    let data;
-    try {
-        data = await fetchData();
-    } catch (error) {
-        console.error('Fetch error:', error);
-        return <div>Error fetching data!</div>;
-    }
 
-    const posts: CodeBoxData[] = data.codeBoxData;
-    const introduction: IntroductionData[] = data.introductionData; // You can use this later if needed
 
-    const currentIntroduction = introduction.find(intro => intro.slug === params.slug);
+
+    const response = await fetch(apiUrl);
+    const text = await response.text();
+
+
 
     const currentPost = posts.find(post => post.slug === params.slug);
+
     if (!currentPost) {
         return <div>Post not found!</div>;
     }
@@ -81,7 +83,6 @@ export default async function BlogPostPage({ params }: Props) {
                     "Datatypes Function: Provides insights into the data types of columns in the dataset."
                 ]}
             />
-            
 
             {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
             
