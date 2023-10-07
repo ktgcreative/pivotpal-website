@@ -63,6 +63,8 @@ export default async function BlogPostPage({ params }: Props) {
         return <div>Post not found!</div>;
     }
 
+    
+
     const nextPost = posts.find(post => post.number === currentPost.number + 1);
     const prevPost = posts.find(post => post.number === currentPost.number - 1);
 
@@ -72,11 +74,11 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="p-4">
 
 
-              <DynamicIntroduction
+              {/* <DynamicIntroduction
                 topic={currentIntroduction?.topic || "Default Topic"}
                 overview={currentIntroduction?.overview || "Default Overview"}
                 steps={currentIntroduction?.steps || []}
-            />
+            /> */}
 
             {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
             
