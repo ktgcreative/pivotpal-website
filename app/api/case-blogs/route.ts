@@ -50,7 +50,7 @@ const DYNAMIC_CODEBOX_DATA = [
     {
         "number": 3,
         "slug": "titanic",
-        "id": "titanic-id-3",
+        "id": "data-cleaning-titanic",
         "title": "Exploring Unique Data Values in the Titanic Dataset",
         "overview": "A comprehensive look at the unique data values within the Titanic dataset using the PivotPal Python package.",
         "explanation": "The Titanic dataset provides a wealth of information about the passengers onboard. One of the key steps in data exploration is understanding the uniqueness of data values. In this exploration, we'll identify and understand the unique values present in each column of the Titanic dataset.",
@@ -67,23 +67,38 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table above highlights the unique data values in each column of the Titanic dataset. Columns like 'PassengerId' and 'Name' have unique values for each entry, while columns like 'Sex' and 'Survived' have only 2 unique values. This information is crucial for understanding the distribution and diversity of data within the dataset."
     },    
-    {
-        number: 2,
-        slug: "sample-slug-2",
-        id: "sample-id-2",
-        title: "Sample Title 2",
-        overview: "This is a sample overview for post 2.",
-        explanation: "Here's a detailed explanation for post 2.",
-        codeContent: "console.log('Hello from post 2!');",
-        tableSummary: "Summary of the table data for post 2."
-    },
-    // ... Add more data as needed
 ];
 
+const DYNAMIC_INTRODUCTION_DATA = [
+    {
+        number: 1,
+        slug: "sample-slug-1",
+        topic: "Introduction to Sample Slug 1",
+        overview: "This is an overview for Sample Slug 1.",
+        steps: ["Step 1", "Step 2", "Step 3"]
+    },
+    {
+        number: 2,
+        slug: "titanic",
+        topic: "Deep Dive into Titanic Data Analysis",
+        overview: "The Titanic dataset is one of the most renowned datasets in the data science community...",
+        steps: [
+            { id: "understanding-dataset-titanic", title: "Understanding the Dataset: Before diving into any analysis..." },
+            { id: "data-cleaning-titanic", title: "Data Cleaning: Like most real-world datasets..." },
+            // ... Add other steps similarly
+        ]
+    }
+    
+    // ... Add more data as needed
+];
 
 import { NextResponse } from "next/server"
 
 
 export async function GET() {
-    return NextResponse.json(DYNAMIC_CODEBOX_DATA)
+    return NextResponse.json({
+        codeBoxData: DYNAMIC_CODEBOX_DATA,
+        introductionData: DYNAMIC_INTRODUCTION_DATA
+    });
 }
+

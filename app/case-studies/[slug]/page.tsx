@@ -1,5 +1,5 @@
 import DataStream from "@/components/dynamic/coding/BlogSection";
-import DynamicCodeBox from "@/components/dynamic/coding/DynamicCodeBox";
+
 import Introduction from "@/components/dynamic/coding/Introduction";
 import Link from "next/link";
 
@@ -13,12 +13,17 @@ interface CodeBoxData {
     codeContent: string;
 }
 
+interface Step {
+    id: string;
+    title: string;
+}
+
 interface IntroductionData {
     number: number;
     slug: string;
     topic: string;
     overview: string;
-    steps: string[];
+    steps: Step[];
 }
 
 interface Props {
@@ -29,34 +34,32 @@ interface Props {
 
 
 export default async function BlogPostPage({ params }: Props) {
-
-
     const apiUrl = process.env.NODE_ENV === 'development'
         ? 'http://localhost:3000/api/case-blogs'
         : 'https://pivotpal.vercel.app/api/case-blogs';
 
-        const posts: CodeBoxData[] = await fetch(apiUrl)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return res.json();
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            return [];
-        });
-    
+    const fetchData = async () => {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
+    };
 
+    let data;
+    try {
+        data = await fetchData();
+    } catch (error) {
+        console.error('Fetch error:', error);
+        return <div>Error fetching data!</div>;
+    }
 
+    const posts: CodeBoxData[] = data.codeBoxData;
+    const introduction: IntroductionData[] = data.introductionData; // You can use this later if needed
 
-    const response = await fetch(apiUrl);
-    const text = await response.text();
-
-
+    const currentIntroduction = introduction.find(intro => intro.slug === params.slug);
 
     const currentPost = posts.find(post => post.slug === params.slug);
-
     if (!currentPost) {
         return <div>Post not found!</div>;
     }
@@ -68,15 +71,23 @@ export default async function BlogPostPage({ params }: Props) {
 
     return (
         <div className="p-4">
-            
+
+
+              <Introduction
+                topic={currentIntroduction?.topic || "Default Topic"}
+                overview={currentIntroduction?.overview || "Default Overview"}
+                steps={currentIntroduction?.steps || []}
+            />
+
             {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
+            
             <div className="flex justify-center items-center mt-4 space-x-4">
             </div>
             <div className="p-5">
-            {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text="Prev" />}
-            
-            
-            {nextPost && <NavigationButton href={`/blog/${nextPost.slug}`} text="Next" />}
+                
+                {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text="Prev" />}
+
+                {nextPost && <NavigationButton href={`/blog/${nextPost.slug}`} text="Next" />}
             </div>
         </div>
     );
