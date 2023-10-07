@@ -123,7 +123,7 @@ export default function Home() {
     </svg>,
     title: "Analyzing the Titanic Dataset with PivotPal",
     description: "Discover the power of PivotPal in analyzing the Titanic dataset. Uncover insights, handle missing values, and engineer features to predict survival rates.",
-    link: "/titanic",
+    link: "/case-studies/titanic",
     linkText: "Dive In"
   };
 
