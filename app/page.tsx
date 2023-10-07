@@ -119,21 +119,21 @@ export default function Home() {
   const mainTutorialItem = {
     badgeText: "Tutorial",
     badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
-  </svg>,
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
+    </svg>,
     title: "Analyzing the Titanic Dataset with PivotPal",
     description: "Discover the power of PivotPal in analyzing the Titanic dataset. Uncover insights, handle missing values, and engineer features to predict survival rates.",
     link: "/titanic",
     linkText: "Dive In"
-};
+  };
 
 
-const tutorialItems = [
+  const tutorialItems = [
     {
       badgeText: "Data Analysis",
       badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
-    </svg>,
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
+      </svg>,
       title: "Visualizing Data with PivotPal",
       description: "Discover how PivotPal can assist you in visualizing and understanding complex datasets with ease.",
       link: "#data-analysis",
@@ -149,7 +149,7 @@ const tutorialItems = [
       link: "/functions",
       linkText: "Explore the Code"
     }
-];
+  ];
 
 
   const tableData = [
@@ -184,7 +184,7 @@ const tutorialItems = [
         secondaryButtonLink={'/about'}
       />
 
-  
+
 
 
       <ContentSection
@@ -199,14 +199,14 @@ const tutorialItems = [
 
       <div className="py-8 px-4 mx-auto max-w-screen-xl  lg:py-16">
         <TutorialSection mainItem={mainTutorialItem} tutorialItems={tutorialItems} />
-      
-</div>
-<Introduction
-                topic="PivotPal: A Comprehensive Data Analysis Tool"
-                overview="PivotPal is a Python package designed to simplify common data analysis tasks, such as summarising large datasets, discovering patterns in distributions and finding missing values. It provides a set of functions that allow users to quickly generate insights from their data without the need for extensive coding. From understanding data distributions to identifying missing values, PivotPal offers a streamlined approach to data exploration."
-                steps={[]}
-            />
-<Timeline id='getStarted' items={lineData} />
+
+      </div>
+      <Introduction
+        topic="PivotPal: A Comprehensive Data Analysis Tool"
+        overview="PivotPal is a Python package designed to simplify common data analysis tasks, such as summarising large datasets, discovering patterns in distributions and finding missing values. It provides a set of functions that allow users to quickly generate insights from their data without the need for extensive coding. From understanding data distributions to identifying missing values, PivotPal offers a streamlined approach to data exploration."
+        steps={[]}
+      />
+      <Timeline id='getStarted' items={lineData} />
     </>
   )
 }

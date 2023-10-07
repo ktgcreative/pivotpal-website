@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Timeline from '../UI/TimeLine';
 
 interface IntroductionProps {
   topic: string;
@@ -24,6 +25,7 @@ const Introduction: React.FC<IntroductionProps> = ({ topic, overview, steps }) =
                     </li>
                 ))}
             </ul>
+            
         </section>
     );
 }

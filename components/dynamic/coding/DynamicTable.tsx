@@ -25,7 +25,7 @@ const DynamicTable: React.FC<DynamicTableProps> = ({ columns }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Array.from({ length: Math.max(...columns.map(col => col.data.length)) }).map((_, rowIndex) => (
+                {Array.from({ length: Math.max(...columns.map(col => col.data ? col.data.length : 0)) }).map((_, rowIndex) => (
                         <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             {columns.map((column, colIndex) => (
                                 <td key={colIndex} className="px-2 md:px-6 py-2">

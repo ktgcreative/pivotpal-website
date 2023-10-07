@@ -1,4 +1,5 @@
 import DynamicCodeBox from "@/components/dynamic/coding/DynamicCodeBox";
+import DynamicTable from "@/components/dynamic/coding/DynamicTable";
 import Introduction from "@/components/dynamic/coding/Introduction";
 import Link from "next/link";
 
@@ -25,6 +26,21 @@ interface Props {
 }
 
 
+const tableData = [
+    {
+        title: "hello",
+        columnName: 'Feature',
+        data: ['FoodCourt', 'Spa', 'VRDeck', 'RoomService', 'ShoppingMall']
+    },
+    {
+        columnName: 'Total',
+        data: ['3,898,237.0', '2,647,791.0', '2,592,790.0', '1,912,541.0', '1,474,092.0']
+    },
+    {
+        columnName: 'Distribution (%)',
+        data: ['31.12', '21.14', '20.70', '15.27', '11.77']
+    }
+];
 
 
 export default async function BlogPostPage({ params }: Props) {
@@ -59,6 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
 
 
         <div className="container mx-auto p-4">
+            
             <Introduction
                 topic="PivotPal: A Comprehensive Data Analysis Tool"
                 overview="PivotPal is a Python package designed to simplify common data analysis tasks, such as summarising large datasets, discovering patterns in distributions and finding missing values. It provides a set of functions that allow users to quickly generate insights from their data without the need for extensive coding. From understanding data distributions to identifying missing values, PivotPal offers a streamlined approach to data exploration."
@@ -76,7 +93,10 @@ export default async function BlogPostPage({ params }: Props) {
             />
 
             {posts.map(post => (
-                <DynamicCodeBox key={post.id} {...post} />
+                <>
+                    <DynamicCodeBox key={post.id} {...post} />
+                    <DynamicTable columns={tableData} />
+                </>
             ))}
         </div>
     );
