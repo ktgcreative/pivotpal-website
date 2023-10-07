@@ -1,6 +1,5 @@
 import DataStream from "@/components/dynamic/coding/BlogSection";
-
-import Introduction from "@/components/dynamic/coding/Introduction";
+import DynamicIntroduction from "@/components/dynamic/coding/DynamicIntroduction";
 import Link from "next/link";
 
 interface CodeBoxData {
@@ -73,7 +72,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="p-4">
 
 
-              <Introduction
+              <DynamicIntroduction
                 topic={currentIntroduction?.topic || "Default Topic"}
                 overview={currentIntroduction?.overview || "Default Overview"}
                 steps={currentIntroduction?.steps || []}

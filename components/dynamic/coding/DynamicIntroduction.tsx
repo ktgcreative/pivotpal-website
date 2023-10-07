@@ -1,11 +1,16 @@
 
 import React from 'react';
 
+interface Step {
+    id: string;
+    title: string;
+}
 interface IntroductionProps {
     topic: string;
     overview: string;
-    steps: string[];  // This should be an array of strings
+    steps: Step[];
 }
+
 
 
 const Introduction: React.FC<IntroductionProps> = ({ topic, overview, steps }) => {
@@ -21,10 +26,11 @@ const Introduction: React.FC<IntroductionProps> = ({ topic, overview, steps }) =
             <ul className="list-decimal pl-5">
                 {steps.map((step, index) => (
                     <li key={index} className="mb-2 text-lg dark:text-gray-400">
-                        <a href={`#${step.replace(/\s+/g, '-').toLowerCase()}`} className="hover:underline">{step}</a>
+                        <a href={`#${step.id}`} className="hover:underline">{step.title}</a>
                     </li>
                 ))}
             </ul>
+
 
 
         </section>
