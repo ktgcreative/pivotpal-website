@@ -6,7 +6,7 @@ const DYNAMIC_CODEBOX_DATA = [
         title: "Sample Title 1",
         overview: "This is a sample overview for post 1.",
         explanation: "Here's a detailed explanation for post 1.",
-        codeContent: "console.log('Hello from post 1!');",
+        codeContent: "pp.distribution(df)",
         tableData: [
             {
                 columnName: 'Feature',
@@ -33,7 +33,7 @@ const DYNAMIC_CODEBOX_DATA = [
         codeContent: "console.log('Hello from post 2!');",
         tableSummary: "Summary of the table data for post 2."
     },
-    // ... Add more posts as needed
+    // ... Add more data as needed
 ];
 
 
