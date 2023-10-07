@@ -66,9 +66,6 @@ export default async function BlogPostPage({ params }: Props) {
 
 
 
-    const nextPost = posts.find(post => post.number === currentPost.number + 1);
-    const prevPost = posts.find(post => post.number === currentPost.number - 1);
-
 
 
     return (
@@ -85,20 +82,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             <div className="flex justify-center items-center mt-4 space-x-4">
             </div>
-            <div className="p-5">
-
-                {prevPost && <NavigationButton href={`/blog/${prevPost.slug}`} text="Prev" />}
-
-                {nextPost && <NavigationButton href={`/blog/${nextPost.slug}`} text="Next" />}
-            </div>
+          
         </div>
     );
 }
-
-const NavigationButton: React.FC<{ href: string, text: string, additionalClasses?: string }> = ({ href, text, additionalClasses = "" }) => (
-    <Link href={href}
-        className={`bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ${text === "Prev" ? "rounded-l" : "rounded-r"} ${additionalClasses}`}>
-        {text}
-
-    </Link>
-);
