@@ -81,12 +81,7 @@ export default async function BlogPostPage({ params }: Props) {
                     "Datatypes Function: Provides insights into the data types of columns in the dataset."
                 ]}
             />
-
-              <Introduction
-                topic={currentIntroduction?.topic || "Default Topic"}
-                overview={currentIntroduction?.overview || "Default Overview"}
-                steps={currentIntroduction?.steps || []}
-            />
+            
 
             {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
             
