@@ -16,7 +16,7 @@ const CodeSection: React.FC<CodeSectionProps> = ({ codeContent, title, overview,
     const highlightedCode = Prism.highlight(codeContent, Prism.languages.javascript, 'javascript');
 
     return (
-        <section id={id} className='md:m-10 lg:m-16 p-4'>
+        <section id={id} className='md:m-10 lg:m-16'>
             <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-none mb-4 dark:text-white">{title}</h1>
             {overview && (
                 <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">

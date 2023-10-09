@@ -29,30 +29,29 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     return (
 
         <section className="bg-white dark:bg-black">
-            <div className="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+        <div className="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
 
-                <Link
-                    className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5 mx-auto dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-800" // Updated classes for dark mode
-                    href="https://github.com/ktgcreative/pivotpal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Github />
-                    <p>Star on GitHub</p>
-                </Link>
+            <Link
+                className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-4 mx-auto dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-800"
+                href="https://github.com/ktgcreative/pivotpal"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Github />
+                <p>Star on GitHub</p>
+            </Link>
+
+            <h1 className="mb-4 text-5xl py-5 font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-7xl dark:text-white">{title}</h1>
+
+            <DynamicCodeBox
+                number={0}
+                slug={''}
+                id={''}
+                codeContent={`import pivotpal as pp`}
+            />
 
 
-
-                <h1 className="mb-4 text-5xl py-10 font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{title}</h1>
-
-                <DynamicCodeBox
-                    number={0}
-                    slug={''}
-                    id={''}
-                    codeContent={`import pivotpal as pp`}
-                />
-
-                <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">{description}</p>
+                <p className="mb-8 text-xl font-normal text-gray-500 lg:text-2xl sm:px-16 lg:px-48 dark:text-gray-400">{description}</p>
                 <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a href={primaryButtonLink} className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-900 dark:focus:ring-blue-900">
                         {primaryButtonText}
