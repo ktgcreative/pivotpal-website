@@ -49,7 +49,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "title": "Understanding Our Massive Dataset",
         "overview": "Diving into the specifics of our dataset that boasts over 19 million entries.",
         "explanation": "Handling big datasets can be daunting. It's essential to get a clear picture of its structure and peculiarities. Here, we're taking a closer look at the various aspects of our dataset, from the types of data it contains to the presence of any missing values.",
-        "codeContent": "pp.get_overview(big_data)",
+        "codeContent": "pp.overview(big_data)",
         "tableData": [
             {
                 "columnName": "Aspect",
