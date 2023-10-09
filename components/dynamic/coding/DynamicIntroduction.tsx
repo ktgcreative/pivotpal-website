@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import React from 'react';
 
 interface Step {
@@ -8,8 +9,9 @@ interface Step {
 interface IntroductionProps {
     topic: string;
     overview: string;
-    steps: Step[];
+    steps: { id: string, title: string }[];  // This should be an array of objects
 }
+
 
 
 
@@ -24,12 +26,12 @@ const Introduction: React.FC<IntroductionProps> = ({ topic, overview, steps }) =
 
             <h2 className="mb-4 text-3xl font-bold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Table of Contents</h2>
             <ul className="list-decimal pl-5">
-                {steps.map((step, index) => (
-                    <li key={index} className="mb-2 text-lg dark:text-gray-400">
-                        <a href={`#${step.id}`} className="hover:underline">{step.title}</a>
-                    </li>
-                ))}
-            </ul>
+    {steps.map((step, index) => (
+        <li key={index} className="mb-2 text-lg dark:text-gray-400">
+            <Link href={`#${step.id}`} className="hover:underline">{step.title}</Link>
+        </li>
+    ))}
+</ul>
 
 
 

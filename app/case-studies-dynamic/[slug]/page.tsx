@@ -22,7 +22,7 @@ interface IntroductionData {
     slug: string;
     topic: string;
     overview: string;
-    steps: Step[];
+    steps: { id: string, title: string }[];
 }
 
 interface Props {
