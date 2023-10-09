@@ -119,28 +119,58 @@ export default function Home() {
 
 
   const mainTutorialItem = {
-    badgeText: "Tutorial",
-    badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
-    </svg>,
-    title: "Analyzing the Titanic Dataset with PivotPal",
-    description: "Discover the power of PivotPal in analyzing the Titanic dataset. Uncover insights, handle missing values, and engineer features to predict survival rates.",
-    link: "/case-studies/titanic",
-    linkText: "Dive In"
+    badgeText: "Crime Analysis",
+    badgeIcon: (
+      <svg
+        className="w-2.5 h-2.5 mr-1.5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 20 16"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+        />
+      </svg>
+    ),
+    title: "Deep Dive into Crime Data with PivotPal",
+    description:
+      "Harness the capabilities of PivotPal to analyse a comprehensive crime dataset consisting of over 19 million records. Explore how our tool efficiently processes, visualises, and extracts actionable insights from vast amounts of data.",
+    link: "/case-studies/police",
+    linkText: "Explore the Analysis",
   };
 
+const tutorialItems = [
+  {
+    badgeText: "Tutorial",
+    badgeIcon: (
+      <svg
+        className="w-2.5 h-2.5 mr-1.5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 20 16"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+        />
+      </svg>
+    ),
+    title: "Analyzing the Titanic Dataset with PivotPal",
+    description:
+      "Utilize PivotPal to delve into the Titanic dataset. Learn how to navigate, analyze, and derive meaningful conclusions from historical data.",
+    link: "/case-studies/titanic",
+    linkText: "Start the Tutorial",
+  },
 
-  const tutorialItems = [
-    {
-      badgeText: "Crime Analysis",
-      badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
-      </svg>,
-      title: "Analyzing Crime Data with PivotPal",
-      description: "Explore the intricacies of the crime dataset and see how PivotPal aids in deciphering patterns and insights.",
-      link: "/case-studies/police",
-      linkText: "Delve into Crime Data Analysis"
-  },  
     {
       badgeText: "Code",
       badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">

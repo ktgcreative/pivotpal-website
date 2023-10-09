@@ -8,8 +8,8 @@ const navigation = [
   { name: 'Tools', href: '/tools/see-all' },
 ]
 const casestudies = [
+  { name: 'UK Crime', href: '/case-studies/police' },
   { name: 'Titanic', href: '/case-studies/titanic' },
-  { name: 'Crime', href: '/case-studies/police' },
   { name: 'Airbnb', href: '/case-studies/airbnb' },
 ]
 
