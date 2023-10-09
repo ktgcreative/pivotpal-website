@@ -27,18 +27,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     secondaryButtonLink
 }) => {
     return (
+
         <section className="bg-white dark:bg-black">
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+
                 <Link
-                    className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
-                    href="https://github.com/Nutlope/twitterbio"
+                    className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5 mx-auto dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-800" // Updated classes for dark mode
+                    href="https://github.com/ktgcreative/pivotpal"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <Github />
                     <p>Star on GitHub</p>
                 </Link>
-                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{title}</h1>
+
+
+
+                <h1 className="mb-4 text-4xl py-10 font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{title}</h1>
 
                 <DynamicCodeBox
                     number={0}

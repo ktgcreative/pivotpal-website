@@ -132,15 +132,15 @@ export default function Home() {
 
   const tutorialItems = [
     {
-      badgeText: "Data Analysis",
+      badgeText: "Crime Analysis",
       badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
       </svg>,
-      title: "Visualizing Data with PivotPal",
-      description: "Discover how PivotPal can assist you in visualizing and understanding complex datasets with ease.",
-      link: "#data-analysis",
-      linkText: "Dive into Data Visualization"
-    },
+      title: "Analyzing Crime Data with PivotPal",
+      description: "Explore the intricacies of the crime dataset and see how PivotPal aids in deciphering patterns and insights.",
+      link: "/case-studies/police",
+      linkText: "Delve into Crime Data Analysis"
+  },  
     {
       badgeText: "Code",
       badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
