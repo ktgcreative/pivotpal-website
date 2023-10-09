@@ -197,7 +197,7 @@ export default function Home() {
     },
 
 
-   
+
   ];
 
 
@@ -240,14 +240,14 @@ export default function Home() {
 
 
       <ContentSection
-  title={'PivotPal: Elevate Your Data Exploration Journey 📊'}
-  paragraphs={[
-    `Dive deeper into your data with PivotPal, the Python toolkit engineered for comprehensive data exploration. Whether you're working with vast datasets or intricate spreadsheets, PivotPal empowers you to uncover hidden patterns, anomalies, and insights with unparalleled ease.`,
-    `Beyond just tables, PivotPal is your all-in-one solution for data preprocessing, cleaning, and understanding. It's designed for both beginners and seasoned analysts, ensuring that every piece of data you encounter is transformed into actionable insights. With PivotPal, data exploration isn't just a task; it's an adventure.`,
-  ]}
-  images={[
-    // You can add image paths here if needed
-  ]} />
+        title={'Elevate Your Data Exploration Journey'}
+        paragraphs={[
+          `Dive deeper into your data with PivotPal, the Python toolkit engineered for comprehensive data exploration. Whether you're working with vast datasets or intricate spreadsheets, PivotPal empowers you to uncover hidden patterns, anomalies, and insights with unparalleled ease.`,
+          `Beyond just tables, PivotPal is your all-in-one solution for data preprocessing, cleaning, and understanding. It's designed for both beginners and seasoned analysts, ensuring that every piece of data you encounter is transformed into actionable insights. With PivotPal, data exploration isn't just a task; it's an adventure.`,
+        ]}
+        images={[
+          // You can add image paths here if needed
+        ]} />
 
 
       <div className="py-8 px-4 mx-auto max-w-screen-xl  lg:py-16">
