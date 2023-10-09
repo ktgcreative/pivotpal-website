@@ -166,7 +166,7 @@ export default function Home() {
       ),
       title: "Airbnb Data Exploration with PivotPal",
       description:
-        "Embark on a comprehensive exploration of the Airbnb dataset using PivotPal. This tutorial covers dataset overview, data types, missing values, zero values, and value distributions across a dataset of over 19,000,000 records.",
+        "Embark on a comprehensive exploration of the Airbnb dataset using PivotPal. This tutorial covers dataset overview, data types, missing values, zero values, and value distributions across a dataset of New York Airbnb Records.",
       link: "/case-studies/airbnb",
       linkText: "Begin the Exploration",
     },
