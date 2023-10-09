@@ -183,10 +183,10 @@ export default function Home() {
         title={'Accelerate your Data Analysis with a Single Import:'}
         subtitle={''}
         description={''}
-        primaryButtonText={'Discover Features'}
-        primaryButtonLink={'/functions'}
-        secondaryButtonText={'Go to the Repo'}
-        secondaryButtonLink={'/about'}
+        primaryButtonText={'Get Started Now'}
+        primaryButtonLink={'/get-started'}
+        secondaryButtonText={'See all tools'}
+        secondaryButtonLink={'/function'}
       />
 
 
