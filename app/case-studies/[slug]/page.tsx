@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: Props) {
 
     return (
         <div className="p-4">
-            <Introduction
+            {/* <Introduction
                 topic="PivotPal: A Comprehensive Data Analysis Tool"
                 overview="PivotPal is a Python package designed to simplify common data analysis tasks, such as summarising large datasets, discovering patterns in distributions and finding missing values. It provides a set of functions that allow users to quickly generate insights from their data without the need for extensive coding. From understanding data distributions to identifying missing values, PivotPal offers a streamlined approach to data exploration."
                 steps={[
@@ -76,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
                     "Duplicates Function: Summarizes duplicate rows and columns in the dataset.",
                     "Datatypes Function: Provides insights into the data types of columns in the dataset."
                 ]}
-            />
+            /> */}
 
                 {Array.isArray(posts) && posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
             <div className="flex justify-center items-center mt-4 space-x-4">
