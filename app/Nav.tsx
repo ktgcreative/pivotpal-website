@@ -7,7 +7,7 @@ import { title } from 'process'
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Functions', href: '/functions' },
+  { name: 'Tools', href: '/tools/see-all' },
 ]
 const casestudies = [
   { name: 'Titanic', href: '/case-studies/titanic' },

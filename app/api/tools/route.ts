@@ -97,7 +97,7 @@ const DYNAMIC_INTRODUCTION_DATA = [
     {
         number: 1,
         slug: "see-all",
-        topic: "Introduction to PivotPal Functions",
+        topic: "Introduction to PivotPal Tools",
         overview: "A comprehensive guide to understanding and utilizing the core functionalities of the PivotPal Python package.",
         steps: [
             {
