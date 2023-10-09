@@ -186,7 +186,7 @@ export default function Home() {
         primaryButtonText={'Get Started Now'}
         primaryButtonLink={'/get-started'}
         secondaryButtonText={'See all tools'}
-        secondaryButtonLink={'/function'}
+        secondaryButtonLink={'/functions'}
       />
 
 

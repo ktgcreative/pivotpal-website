@@ -12,11 +12,6 @@ interface CodeBoxData {
     codeContent: string;
 }
 
-interface Step {
-    id: string;
-    title: string;
-}
-
 interface IntroductionData {
     number: number;
     slug: string;
@@ -34,8 +29,8 @@ interface Props {
 
 export default async function BlogPostPage({ params }: Props) {
     const apiUrl = process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000/api/case-blogs'
-        : 'https://pivotpal.vercel.app/api/case-blogs';
+        ? 'http://localhost:3000/api/get-started'
+        : 'https://pivotpal.vercel.app/api/get-started';
 
     const fetchData = async () => {
         const response = await fetch(apiUrl);
