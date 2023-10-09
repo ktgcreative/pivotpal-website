@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { title } from 'process'
 
 const navigation = [
   { name: 'About', href: '/about' },
@@ -19,11 +18,11 @@ export default function Example() {
 
   return (
     <>
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="flex items-center justify-between p-6 lg:px-8 bg-white dark:bg-black" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">PivotPal.</span>
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">PivotPal.</h1>
+            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white md:text-5xl lg:text-6xl">PivotPal.</h1>
           </a>
         </div>
         <div className="flex">
@@ -39,14 +38,13 @@ export default function Example() {
       </nav>
 
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-black/10">
           <div className="flex items-center justify-between">
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5 focus:ring-0">
                 <span className="sr-only">PivotPal.</span>
-                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">PivotPal.</h1>
+                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white md:text-5xl lg:text-6xl">PivotPal.</h1>
               </a>
-
             </div>
             <button
               type="button"
@@ -64,26 +62,26 @@ export default function Example() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
-              
+
               <div className="space-y-2 py-6">
-                <p className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"'>Case Studies:</p>
+                <p className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'>Case Studies:</p>
                 {casestudies.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
-              <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" >
+              <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
                 Get Started
               </a>
             </div>
