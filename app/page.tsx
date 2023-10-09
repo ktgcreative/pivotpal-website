@@ -146,6 +146,31 @@ export default function Home() {
 
   const tutorialItems = [
     {
+      badgeText: "Data Exploration",
+      badgeIcon: (
+        <svg
+          className="w-2.5 h-2.5 mr-1.5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 16"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+          />
+        </svg>
+      ),
+      title: "Airbnb Data Exploration with PivotPal",
+      description:
+        "Embark on a comprehensive exploration of the Airbnb dataset using PivotPal. This tutorial covers dataset overview, data types, missing values, zero values, and value distributions across a dataset of over 19,000,000 records.",
+      link: "/case-studies/airbnb",
+      linkText: "Begin the Exploration",
+    },
+    {
       badgeText: "Tutorial",
       badgeIcon: (
         <svg
@@ -172,31 +197,7 @@ export default function Home() {
     },
 
 
-    {
-      badgeText: "Data Exploration",
-      badgeIcon: (
-        <svg
-          className="w-2.5 h-2.5 mr-1.5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 20 16"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
-          />
-        </svg>
-      ),
-      title: "Airbnb Data Exploration with PivotPal",
-      description:
-        "Embark on a comprehensive exploration of the Airbnb dataset using PivotPal. This tutorial covers dataset overview, data types, missing values, zero values, and value distributions across a dataset of over 19,000,000 records.",
-      link: "/case-studies/airbnb",
-      linkText: "Begin the Exploration",
-    },
+   
   ];
 
 
