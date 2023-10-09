@@ -117,7 +117,38 @@ const DYNAMIC_CODEBOX_DATA = [
 ];
 
 const DYNAMIC_INTRODUCTION_DATA = [
-
+    {
+        number: 1,
+        slug: "installation",
+        topic: "Getting Started with PivotPal",
+        overview: "A comprehensive guide to set up, understand, and utilize the functionalities of the PivotPal Python package.",
+        steps: [
+            {
+                id: "install",
+                title: "Installing the Package: Get PivotPal ready in your notebook."
+            },
+            {
+                id: "install2",
+                title: "Importing PivotPal: Access the functionalities of PivotPal in your workspace."
+            },
+            {
+                id: "function-explanation",
+                title: "The 'helper' Function: A guide to the myriad of functions in PivotPal."
+            },
+            {
+                id: "dataset-overview",
+                title: "Massive Dataset Analysis: A deep dive into a dataset with over 19 million entries."
+            },
+            {
+                id: "missing-values",
+                title: "Titanic Dataset: Exploring missing data within the Titanic dataset."
+            },
+            {
+                id: "room-type-distribution",
+                title: "Airbnb Dataset: Analyzing the distribution of 'Room Type'."
+            }
+        ]
+    },
     {
         number: 2,
         slug: "titanic",
