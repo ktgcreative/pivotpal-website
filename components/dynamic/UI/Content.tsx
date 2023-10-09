@@ -10,20 +10,17 @@ interface ContentProps {
   }[];
 }
 
-const tableData = [
-  {
-    columnName: 'Feature',
-    data: ['FoodCourt', 'Spa', 'VRDeck', 'RoomService', 'ShoppingMall']
-  },
-  {
-    columnName: 'Total',
-    data: ['3,898,237.0', '2,647,791.0', '2,592,790.0', '1,912,541.0', '1,474,092.0']
-  },
-  {
-    columnName: 'Distribution (%)',
-    data: ['31.12', '21.14', '20.70', '15.27', '11.77']
-  }
-];
+
+
+  const tableData = [
+    {
+      "columnName": "Tools",
+      "data": ["pp.overview", "pp.distribution", "pp.range", "pp.unique", "pp.summarise", "pp.missing", "pp.zeros", "pp.datatypes"]
+    }
+  ]
+
+
+
 
 const ContentSection: React.FC<ContentProps> = ({ title, paragraphs, images }) => {
   return (
@@ -36,7 +33,7 @@ const ContentSection: React.FC<ContentProps> = ({ title, paragraphs, images }) =
           ))}
         </div>
         <div className="gap-4 mt-8">
-          {/* <DynamicTable columns={tableData}/> */}
+          <DynamicTable columns={tableData}/>
           {/* <DynamicTable columns={tableData}/> */}
         </div>
       </div>
