@@ -206,12 +206,7 @@ export default function Home() {
         <TutorialSection mainItem={mainTutorialItem} tutorialItems={tutorialItems} />
 
       </div>
-      <Introduction
-        topic="PivotPal: A Comprehensive Data Analysis Tool"
-        overview="PivotPal is a Python package designed to simplify common data analysis tasks, such as summarising large datasets, discovering patterns in distributions and finding missing values. It provides a set of functions that allow users to quickly generate insights from their data without the need for extensive coding. From understanding data distributions to identifying missing values, PivotPal offers a streamlined approach to data exploration."
-        steps={[]}
-      />
-      <Timeline id='getStarted' items={lineData} />
+      
     </>
   )
 }
