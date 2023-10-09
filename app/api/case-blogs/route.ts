@@ -145,6 +145,150 @@ const DYNAMIC_CODEBOX_DATA = [
             }
         ],
         "tableSummary": "The table above highlights the distribution of various crime types in the dataset. 'Violence and sexual offences' is the most common crime type, accounting for 33.63% of the dataset. This is followed by 'Anti-social behaviour' and 'Public order'. The data provides a comprehensive view of the nature of reported crimes."
+    },
+
+
+    // AIRBNB DATA
+
+    {
+        "number": 1,
+        "slug": "airbnb",
+        "id": "overview",
+        "title": "1. Dataset Overview",
+        "overview": "Provides a general overview of the dataset.",
+        "explanation": "This function gives a snapshot of the dataset, including the number of rows, columns, missing values, and more.",
+        "codeContent": "pp.overview(airbnb)",
+        "tableData": [
+            {
+                "columnName": "Description",
+                "data": ["Total Rows", "Total Columns", "Columns with Missing Values", "Total Duplicate Rows", "Most Frequent Data Type", "Columns with Binary Values", "Columns with Zero Values", "Unique Data Types", "Numeric Columns", "Non-Numeric Columns"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["10,019", "22", "4", "13", "object", "0", "10", "3", "13", "9"]
+            }
+        ],
+        "tableSummary": "The table above provides a comprehensive overview of the Airbnb dataset, highlighting key metrics and characteristics."
+    },
+    {
+        "number": 2,
+        "slug": "airbnb",
+        "id": "types",
+        "title": "2. Data Types Distribution",
+        "overview": "Analyzes the distribution of data types in the dataset.",
+        "explanation": "This function provides a breakdown of the different data types present in the dataset and their distribution.",
+        "codeContent": "pp.datatypes(airbnb)",
+        "tableData": [
+            {
+                "columnName": "Data Type",
+                "data": ["object", "int64", "float64"]
+            },
+            {
+                "columnName": "Column Count",
+                "data": ["8", "4", "4"]
+            },
+            {
+                "columnName": "% Distribution",
+                "data": ["50.0", "25.0", "25.0"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of data types in the Airbnb dataset."
+    },
+    {
+        "number": 3,
+        "slug": "airbnb",
+        "id": "missing",
+        "title": "3. Columns with Missing Values",
+        "overview": "Identifies columns with missing values in the dataset.",
+        "explanation": "This function lists columns that have missing values, along with the count and percentage of missing data.",
+        "codeContent": "pp.missing(airbnb)",
+        "tableData": [
+            {
+                "columnName": "Column Name",
+                "data": ["price", "estimated_revenue", "name", "host_name"]
+            },
+            {
+                "columnName": "Missing Count",
+                "data": ["238", "238", "5", "2"]
+            },
+            {
+                "columnName": "Missing %",
+                "data": ["2.0", "2.0", "0.0", "0.0"]
+            }
+        ],
+        "tableSummary": "The table above highlights columns with missing values in the Airbnb dataset."
+    },
+    {
+        "number": 4,
+        "slug": "airbnb",
+        "id": "zeros",
+        "title": "4. Columns with Zero Values",
+        "overview": "Identifies columns with zero values in the dataset.",
+        "explanation": "This function lists columns that have zero values, along with the count and percentage of zeros.",
+        "codeContent": "pp.zeros(airbnb)",
+        "tableData": [
+            {
+                "columnName": "Column Name",
+                "data": ["availability_365", "number_of_reviews", "last_review", "reviews_per_month", "rating", "number_of_stays", "5_stars", "occupancy", "estimated_revenue", "price"]
+            },
+            {
+                "columnName": "Zero Count",
+                "data": ["3614", "2075", "2075", "2075", "2075", "2075", "2075", "290", "288", "2"]
+            },
+            {
+                "columnName": "Zero %",
+                "data": ["36.07", "20.71", "20.71", "20.71", "20.71", "20.71", "20.71", "2.89", "2.87", "0.02"]
+            }
+        ],
+        "tableSummary": "The table above highlights columns with zero values in the Airbnb dataset."
+    },
+    {
+        "number": 5,
+        "slug": "airbnb",
+        "id": "distribution-roomtype",
+        "title": "5. Distribution of `room_type`",
+        "overview": "Analyzes the distribution of values for the `room_type` column.",
+        "explanation": "This function provides a breakdown of the distribution of room types in the dataset.",
+        "codeContent": "pp.distribution(airbnb, 'room_type')",
+        "tableData": [
+            {
+                "columnName": "room_type",
+                "data": ["Entire Home/Apt", "Private Room", "Shared Room"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["5186", "4607", "226"]
+            },
+            {
+                "columnName": "%",
+                "data": ["51.76", "45.98", "2.26"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of room types in the Airbnb dataset."
+    },
+    {
+        "number": 6,
+        "slug": "airbnb",
+        "id": "distribution-burough",
+        "title": "6. Distribution of `burough`",
+        "overview": "Analyzes the distribution of values for the `burough` column.",
+        "explanation": "This function provides a breakdown of the distribution of boroughs in the dataset.",
+        "codeContent": "pp.distribution(airbnb, 'burough')",
+        "tableData": [
+            {
+                "columnName": "burough",
+                "data": ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["4449", "4086", "1182", "229", "73"]
+            },
+            {
+                "columnName": "%",
+                "data": ["44.41", "40.78", "11.80", "2.29", "0.73"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of boroughs in the Airbnb dataset."
     }
     
     
@@ -153,6 +297,39 @@ const DYNAMIC_CODEBOX_DATA = [
 
 const DYNAMIC_INTRODUCTION_DATA = [
    
+    {
+        "number": 1,
+        "slug": "airbnb",
+        "topic": "Airbnb Data Exploration",
+        "overview": "A comprehensive exploration of the Airbnb dataset, focusing on dataset overview, data types, missing values, zero values, and value distributions.",
+        "steps": [
+            {
+                "id": "overview",
+                "title": "1. Dataset Overview: A snapshot of the Airbnb dataset."
+            },
+            {
+                "id": "types",
+                "title": "2. Data Types Distribution: Analyzing the types of data in the dataset."
+            },
+            {
+                "id": "missings",
+                "title": "3. Columns with Missing Values: Identifying columns with missing data."
+            },
+            {
+                "id": "zero",
+                "title": "4. Columns with Zero Values: Identifying columns with zero data."
+            },
+            {
+                "id": "distribution-roomtype",
+                "title": "5. Distribution of `room_type`: Analyzing the types of rooms available."
+            },
+            {
+                "id": "distribution-burough",
+                "title": "6. Distribution of `burough`: Analyzing the distribution of boroughs in the dataset."
+            }
+        ]
+    }
+,    
     {
         number: 2,
         slug: "titanic",
