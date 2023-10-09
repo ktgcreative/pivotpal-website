@@ -144,43 +144,59 @@ export default function Home() {
     linkText: "Explore the Analysis",
   };
 
-const tutorialItems = [
-  {
-    badgeText: "Tutorial",
-    badgeIcon: (
-      <svg
-        className="w-2.5 h-2.5 mr-1.5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 20 16"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
-        />
-      </svg>
-    ),
-    title: "Analyzing the Titanic Dataset with PivotPal",
-    description:
-      "Utilize PivotPal to delve into the Titanic dataset. Learn how to navigate, analyze, and derive meaningful conclusions from historical data.",
-    link: "/case-studies/titanic",
-    linkText: "Start the Tutorial",
-  },
+  const tutorialItems = [
+    {
+      badgeText: "Tutorial",
+      badgeIcon: (
+        <svg
+          className="w-2.5 h-2.5 mr-1.5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 16"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+          />
+        </svg>
+      ),
+      title: "Analyzing the Titanic Dataset with PivotPal",
+      description:
+        "Utilize PivotPal to delve into the Titanic dataset. Learn how to navigate, analyze, and derive meaningful conclusions from historical data.",
+      link: "/case-studies/titanic",
+      linkText: "Start the Tutorial",
+    },
+
 
     {
-      badgeText: "Code",
-      badgeIcon: <svg className="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
-      </svg>,
-      title: "PivotPal's Codebase Explained",
-      description: "Get a deeper understanding of how PivotPal's functions work under the hood and how you can extend its capabilities.",
-      link: "/functions",
-      linkText: "Explore the Code"
-    }
+      badgeText: "Data Exploration",
+      badgeIcon: (
+        <svg
+          className="w-2.5 h-2.5 mr-1.5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 16"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"
+          />
+        </svg>
+      ),
+      title: "Airbnb Data Exploration with PivotPal",
+      description:
+        "Embark on a comprehensive exploration of the Airbnb dataset using PivotPal. This tutorial covers dataset overview, data types, missing values, zero values, and value distributions across a dataset of over 19,000,000 records.",
+      link: "/case-studies/airbnb",
+      linkText: "Begin the Exploration",
+    },
   ];
 
 
@@ -205,8 +221,8 @@ const tutorialItems = [
 
 
     <>
-     {/* This link can be customized to point to any URL and display any text. */}
-    
+      {/* This link can be customized to point to any URL and display any text. */}
+
 
       <HeroSection
         id='getStarted'
@@ -236,7 +252,7 @@ const tutorialItems = [
         <TutorialSection mainItem={mainTutorialItem} tutorialItems={tutorialItems} />
 
       </div>
-      
+
     </>
   )
 }
