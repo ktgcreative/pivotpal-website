@@ -240,14 +240,15 @@ export default function Home() {
 
 
       <ContentSection
-        title={'PivotPal: Powering Data Analysis'}
-        paragraphs={[
-          'PivotPal is designed to simplify and enhance your data analysis workflow in Python. With a suite of utility functions, it assists in understanding and visualizing data distributions, missing values, zero values, duplicates, and more.',
-          `Whether you're a data scientist, analyst, or enthusiast, PivotPal provides the tools you need to gain deeper insights from your datasets. Its intuitive functions make data preprocessing and exploration a breeze, allowing you to focus on drawing meaningful conclusions.`,
-        ]}
-        images={[
-          // You can add image paths here if needed
-        ]} />
+  title={'PivotPal: Elevate Your Data Exploration Journey 📊'}
+  paragraphs={[
+    `Dive deeper into your data with PivotPal, the Python toolkit engineered for comprehensive data exploration. Whether you're working with vast datasets or intricate spreadsheets, PivotPal empowers you to uncover hidden patterns, anomalies, and insights with unparalleled ease.`,
+    `Beyond just tables, PivotPal is your all-in-one solution for data preprocessing, cleaning, and understanding. It's designed for both beginners and seasoned analysts, ensuring that every piece of data you encounter is transformed into actionable insights. With PivotPal, data exploration isn't just a task; it's an adventure.`,
+  ]}
+  images={[
+    // You can add image paths here if needed
+  ]} />
+
 
       <div className="py-8 px-4 mx-auto max-w-screen-xl  lg:py-16">
         <TutorialSection mainItem={mainTutorialItem} tutorialItems={tutorialItems} />
