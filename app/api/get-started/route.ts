@@ -4,14 +4,14 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 2,
         "title": "First install the package to your notebook:",
         "slug": "installation",
-        "id": "missing-values",
+        "id": "install",
         "codeContent": "!pip install pivotpal",
     },
     {
         "number": 2,
         "title": "Then install the PivotPal Package:",
         "slug": "installation",
-        "id": "missing-values",
+        "id": "install2",
         "codeContent": "import pivotpal as pp",
     },
     {
