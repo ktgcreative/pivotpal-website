@@ -3,7 +3,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 1,
         "slug": "see-all",
         "id": "distribution",
-        "title": "Value Distribution Table",
+        "title": "1. Value Distribution Table",
         "overview": "Analyzes the distribution of values for a specified column in a dataset.",
         "explanation": "This function provides a breakdown of the distribution of values for a specified column. It's useful for understanding the spread and frequency of data points within a column.",
         "codeContent": "pp.distribution(your_data, 'column_name')",
@@ -27,7 +27,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 2,
         "slug": "see-all",
         "id": "unique",
-        "title": "Unique Values in Dataset",
+        "title": "2. Unique Values in Dataset",
         "overview": "Provides a count of unique values for each column in the dataset.",
         "explanation": "This function enumerates the unique values present in each column of the dataset, helping to understand data diversity.",
         "codeContent": "pp.unique(your_data)",
@@ -47,7 +47,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 3,
         "slug": "see-all",
         "id": "missing",
-        "title": "Missing Values Analysis",
+        "title": "3. Missing Values Analysis",
         "overview": "Provides a summary of missing values for each column in the dataset.",
         "explanation": "This function identifies columns with missing values, providing a count and percentage of missing data. It's crucial for data cleaning and preprocessing.",
         "codeContent": "pp.missing(your_data)",
@@ -71,7 +71,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 4,
         "slug": "see-all",
         "id": "duplicates",
-        "title": "Duplicate Row Analysis",
+        "title": "4. Duplicate Row Analysis",
         "overview": "Identifies and counts duplicate rows in the dataset.",
         "explanation": "Duplicate rows can skew analysis and lead to incorrect conclusions. This function helps in identifying and potentially removing them.",
         "codeContent": "pp.duplicates(your_data)",
@@ -102,19 +102,19 @@ const DYNAMIC_INTRODUCTION_DATA = [
         steps: [
             {
                 id: "distribution",
-                title: "Value Distribution Table: Dive deep into the distribution of values for a specified column."
+                title: " 1. Value Distribution Table: Dive deep into the distribution of values for a specified column."
             },
             {
                 id: "unique",
-                title: "Unique Values in Dataset: Uncover the unique values present in each column."
+                title: "2. Unique Values in Dataset: Uncover the unique values present in each column."
             },
             {
                 id: "missing",
-                title: "Missing Values Analysis: Identify and understand the gaps in your dataset."
+                title: "3. Missing Values Analysis: Identify and understand the gaps in your dataset."
             },
             {
                 id: "duplicates",
-                title: "Duplicate Row Analysis: Detect and quantify duplicate rows in your dataset."
+                title: "4. Duplicate Row Analysis: Detect and quantify duplicate rows in your dataset."
             }
         ]
     },
