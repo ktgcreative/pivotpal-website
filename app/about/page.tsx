@@ -21,21 +21,30 @@ const tableData = [
 
 
 const AboutPage = () => {
-    // Sample data for the DynamicCodeBox component
-    const posts: any[] = [
-        // ... (Your list of CodeBoxData items here)
-    ];
 
+    const posts: any[] = [
+        
+    ];
+    
     return (
         <div className="container mx-auto p-4">
             <section className="mb-8">
 
+            <h1 className="text-2xl  md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-none mb-4 dark:text-white">
+                Get Started:
+            </h1>
+        
+            <DynamicCodeBox  codeContent={`!pip install pivotpal`}  number={0} slug={''} id={''}  />
+            <DynamicCodeBox  codeContent={`import pivotpal as pp`}  number={0} slug={''} id={''}  />
                 <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-none mb-4 dark:text-white">
-                    About PivotPal
+                    Overview:
                 </h1>
                 <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                     <strong>Quick Overview:</strong> PivotPal is your go-to Python package for streamlined data analysis. Whether you&apos;re just starting out or you&apos;re deep into machine learning, PivotPal has got your back.
                 </p>
+            <DynamicCodeBox  codeContent={`pp.helper()`}  number={0} slug={''} id={''}  />
+            <DynamicCodeBox  codeContent={`pp.overview(dataset)`}  number={0} slug={''} id={''}  />
+               
                 <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                     <strong>Data Cleaning & Validation:</strong> Say goodbye to the tedious aspects of data cleaning. PivotPal offers intuitive functions that make this process a breeze.
                 </p>
@@ -45,11 +54,6 @@ const AboutPage = () => {
                 <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                     Remember, while PivotPal is a powerful tool, its true strength is unlocked by how you integrate it into your data journey. Dive into our documentation and harness its full potential.
                 </p>
-                <h1 className="text-2xl  md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-none mb-4 dark:text-white">
-                    Code Example:
-                </h1>
-
-                <DynamicCodeBox number={0} slug={''} id={''} codeContent={`pp.distribution(df, "Title")`} />
 
                 <h1 className="text-2xl  md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-none mb-4 dark:text-white">
                     Outputs a distribution table:
@@ -78,7 +82,7 @@ const AboutPage = () => {
             </section>
 
 
-            <BlogSection number={0} slug={''} id={''} codeContent={''} />
+         <BlogSection number={0} slug={''} id={''} codeContent={''} />
 
         </div>
     );
