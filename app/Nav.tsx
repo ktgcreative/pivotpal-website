@@ -8,6 +8,8 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Functions', href: '/functions' },
+]
+const casestudies = [
   { name: 'Titanic', href: '/case-studies/titanic' },
   { name: 'Crime', href: '/case-studies/police' },
   { name: 'Airbnb', href: '/case-studies/airbnb' },
@@ -18,7 +20,7 @@ export default function Example() {
 
   return (
     <>
-    <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">PivotPal.</span>
@@ -65,6 +67,21 @@ export default function Example() {
                   </a>
                 ))}
               </div>
+              <div className="space-y-2 py-6">
+                <p className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"'>Case Studies:</p>
+                {casestudies.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" >
+                Get Started
+              </a>
             </div>
           </div>
         </Dialog.Panel>
