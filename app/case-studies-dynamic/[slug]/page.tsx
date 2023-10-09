@@ -59,13 +59,15 @@ export default async function BlogPostPage({ params }: Props) {
     const currentIntroduction = introduction?.find(intro => intro.slug === params.slug);
     const currentPost = posts?.find(post => post.slug === params.slug);
 
+    console.log(currentIntroduction)
 
     if (!currentPost) {
         return <div>Post not found!</div>;
     }
 
 
-
+    console.log(currentIntroduction)
+console.log("/////// post /////" + currentPost)
 
 
     return (
@@ -81,6 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
             {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
 
             <div className="flex justify-center items-center mt-4 space-x-4">
+            
             </div>
           
         </div>

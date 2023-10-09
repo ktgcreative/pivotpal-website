@@ -1,4 +1,3 @@
-import DataStream from "@/components/dynamic/coding/BlogSection";
 import DynamicCodeBox from "@/components/dynamic/coding/DynamicCodeBox";
 import Introduction from "@/components/dynamic/coding/Introduction";
 import Link from "next/link";
@@ -71,9 +70,7 @@ export default async function BlogPostPage({ params }: Props) {
     return (
         <div className="p-4">
             
-            {posts.map(post => (
-                <DataStream key={post.id} {...post} />
-            ))}
+            {posts.filter(post => post.slug === params.slug).map(data => <DynamicCodeBox key={data.id} {...data} />)}
             <div className="flex justify-center items-center mt-4 space-x-4">
             </div>
             <div className="p-5">

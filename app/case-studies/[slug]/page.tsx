@@ -25,6 +25,9 @@ interface Props {
     params: { slug: string }
 }
 
+
+
+
 export default async function BlogPostPage({ params }: Props) {
 
 
@@ -32,7 +35,7 @@ export default async function BlogPostPage({ params }: Props) {
         ? 'http://localhost:3000/api/case-blogs'
         : 'https://pivotpal.vercel.app/api/case-blogs';
 
-    const posts: CodeBoxData[] = await fetch(apiUrl)
+        const { codeBoxData: posts } = await fetch(apiUrl)
         .then(res => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
@@ -41,17 +44,21 @@ export default async function BlogPostPage({ params }: Props) {
         })
         .catch(error => {
             console.error('Fetch error:', error);
-            return [];
+            return { codeBoxData: [] };
         });
+    
+        
+
 
     const response = await fetch(apiUrl);
     const text = await response.text();
 
-    const currentPost = posts.find(post => post.slug === params.slug);
+    console.log(posts)
+    console.log(posts)
 
-    if (!currentPost) {
-        return <div>Post not found!</div>;
-    }
+
+
+
 
     return (
         <div className="p-4">
@@ -71,8 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
                 ]}
             />
 
-            {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
-            
+                {Array.isArray(posts) && posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
             <div className="flex justify-center items-center mt-4 space-x-4">
             </div>
 

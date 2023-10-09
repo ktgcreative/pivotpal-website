@@ -1,8 +1,10 @@
+import Github from '@/components/Github';
 import ContentSection from '@/components/dynamic/UI/Content'
 import HeroSection from '@/components/dynamic/UI/HeroSection'
 import Timeline from '@/components/dynamic/UI/TimeLine';
 import TutorialSection from '@/components/dynamic/UI/Tutorial';
 import Introduction from '@/components/dynamic/coding/Introduction';
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -173,6 +175,9 @@ export default function Home() {
 
 
     <>
+     {/* This link can be customized to point to any URL and display any text. */}
+    
+
       <HeroSection
         id='getStarted'
         title={'Accelerate your Data Analysis with a Single Import:'}

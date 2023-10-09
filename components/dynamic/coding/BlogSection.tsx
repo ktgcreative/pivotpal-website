@@ -62,7 +62,11 @@ const DataStream: React.FC<DataProps> = ({ title, overview, explanation, codeCon
                         </table>
                     </div>
                 </div>
+                
+                    
                     {tableSummary && <p className="mt-4 text-gray-600 dark:text-gray-400">{tableSummary}</p>}
+               
+               
                 </div>
             )}
         </div>

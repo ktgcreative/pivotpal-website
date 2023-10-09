@@ -2,6 +2,7 @@ import React from 'react';
 import DynamicCodeBox from "@/components/dynamic/coding/DynamicCodeBox";
 import Link from "next/link";
 import DynamicTable from '@/components/dynamic/coding/DynamicTable';
+import BlogSection from '@/components/dynamic/coding/BlogSection';
 
 const tableData = [
     {
@@ -77,7 +78,7 @@ const AboutPage = () => {
             </section>
 
 
-
+            <BlogSection number={0} slug={''} id={''} codeContent={''} />
 
         </div>
     );
