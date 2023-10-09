@@ -1,3 +1,4 @@
+
 const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Tools', href: '/tools/see-all' },
@@ -23,7 +24,7 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Navigation</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 {navigation.map((item) => (
-                  <li className="mb-4">
+                  <li key={item.href} className="mb-4">
                     <a href={item.href} className="hover:underline">{item.name}</a>
                   </li>
                 ))}
@@ -33,7 +34,7 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Case Studies</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 {casestudies.map((item) => (
-                  <li className="mb-4">
+                  <li key={item.href} className="mb-4">
                     <a href={item.href} className="hover:underline">{item.name}</a>
                   </li>
                 ))}
