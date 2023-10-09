@@ -58,7 +58,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 4,
         "slug": "police",
         "id": "overview-crime-data",
-        "title": "Comprehensive Overview of the Crime Dataset with 19M Entries",
+        "title": "1. Comprehensive Overview of the Crime Dataset with 19M Entries",
         "overview": "Utilizing the PivotPal Python package, we delve into the vast crime dataset, which boasts an impressive 19 million entries, to provide a holistic understanding of its structure and characteristics.",
         "explanation": "Kaggle datasets often come with a myriad of features and entries. The crime dataset is no exception, with a staggering 19 million rows. In this section, we'll shed light on the dataset's general attributes, from column types to missing values, ensuring a robust understanding for any aspiring data scientist or enthusiast.",
         "codeContent": "pp.overview(crime_data)",
@@ -78,7 +78,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 5,
         "slug": "police",
         "id": "missing-data-crime",
-        "title": "Exploring Missing Data in the Crime Dataset",
+        "title": "2. Exploring Missing Data in the Crime Dataset",
         "overview": "A deep dive into the missing data within the crime dataset using the PivotPal Python package.",
         "explanation": "The crime dataset provides comprehensive data about various crimes reported. In this exploration, we'll focus on identifying and understanding the missing data within this dataset.",
         "codeContent": "pp.missing(crime_data)",
@@ -102,7 +102,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 6,
         "slug": "police",
         "id": "outcome-distribution",
-        "title": "Distribution Analysis of 'Last outcome category' in the Crime Dataset",
+        "title": "3. Distribution Analysis of 'Last outcome category' in the Crime Dataset",
         "overview": "Using the PivotPal Python package, we explore the distribution of the 'Last outcome category' within the crime dataset, which contains over 19 million entries.",
         "explanation": "In large datasets like the one from Kaggle's crime records, understanding the distribution of specific columns is crucial. Here, we focus on the 'Last outcome category' to discern the most common outcomes of reported crimes.",
         "codeContent": "pp.distribution(crime_data, 'Last outcome category')",
@@ -126,7 +126,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 7,
         "slug": "police",
         "id": "crime-type-distribution",
-        "title": "Distribution Analysis of 'Crime type' in the Crime Dataset",
+        "title": "4. Distribution Analysis of 'Crime type' in the Crime Dataset",
         "overview": "Using the PivotPal Python package, we delve into the crime dataset, which contains over 19 million entries, to understand the distribution of different crime types.",
         "explanation": "Kaggle datasets, especially those as extensive as the crime dataset with its 19 million records, offer a plethora of insights. In this section, we'll focus on the 'Crime type' column to understand the most prevalent types of reported crimes.",
         "codeContent": "pp.distribution(crime_data, 'Crime type')",
@@ -355,19 +355,19 @@ const DYNAMIC_INTRODUCTION_DATA = [
         steps: [
             {
                 id: "overview-crime-data",
-                title: "Dataset Overview: A snapshot of the crime dataset's general attributes."
+                title: "1. Dataset Overview: A snapshot of the crime dataset's general attributes."
             },
             {
                 id: "missing-data-crime",
-                title: "Missing Data: Identifying gaps in the dataset."
+                title: "2. Missing Data: Identifying gaps in the dataset."
             },
             {
                 id: "outcome-distribution",
-                title: "Outcome Distribution: Analyzing the 'Last outcome category'."
+                title: "3. Outcome Distribution: Analyzing the 'Last outcome category'."
             },
             {
                 id: "crime-type-distribution",
-                title: "Crime Type Distribution: Understanding prevalent crime types."
+                title: "4. Crime Type Distribution: Understanding prevalent crime types."
             }
         ]
     }
