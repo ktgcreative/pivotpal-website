@@ -9,7 +9,7 @@ const DYNAMIC_CODEBOX_DATA = [
     },
     {
         "number": 2,
-        "title": "Then import the PivotPal Package:",
+        "title": "2. Then import the PivotPal Package:",
         "slug": "installation",
         "id": "install2",
         "codeContent": "import pivotpal as pp",
@@ -18,7 +18,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 8,
         "slug": "installation",
         "id": "function-explanation",
-        "title": "2. Understanding the 'helper' Function in the Pivot Pal Package",
+        "title": "3. Understanding the 'helper' Function in the Pivot Pal Package",
         "overview": "A detailed explanation of the 'helper' function designed to assist users in understanding the functionalities of the 'Pivot Pal' package.",
         "explanation": "The 'helper' function provides descriptions of various functions available in the 'Pivot Pal' package. It offers guidance on how to use them based on a keyword provided by the user. If no keyword is provided, it displays a list of all available functions.",
         "codeContent": "pp.helper()",
@@ -46,7 +46,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 1,
         "slug": "installation",
         "id": "dataset-overview",
-        "title": "3. Understanding Our Massive Dataset",
+        "title": "4. Understanding Our Massive Dataset",
         "overview": "Diving into the specifics of our dataset that boasts over 19 million entries.",
         "explanation": "Handling big datasets can be daunting. It's essential to get a clear picture of its structure and peculiarities. Here, we're taking a closer look at the various aspects of our dataset, from the types of data it contains to the presence of any missing values.",
         "codeContent": "pp.overview(big_data)",
@@ -66,7 +66,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 2,
         "slug": "installation",
         "id": "missing-values",
-        "title": "4. Exploring Missing Data in the Titanic Dataset",
+        "title": "5. Exploring Missing Data in the Titanic Dataset",
         "overview": "A deep dive into the missing data within the Titanic dataset using the PivotPal Python package.",
         "explanation": "The Titanic dataset is one of the most popular datasets used in data science. It contains information about the passengers onboard the Titanic, including their age, cabin, and embarkation point. In this exploration, we'll focus on identifying and understanding the missing data within this dataset.",
         "codeContent": "pp.missing(df)",
@@ -90,7 +90,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 1,
         "slug": "installation",
         "id": "room-type-distribution",
-        "title": "5. Distribution Analysis of 'Room Type' in the Airbnb Dataset",
+        "title": "6. Distribution Analysis of 'Room Type' in the Airbnb Dataset",
         "overview": "A comprehensive look at the distribution of different room types within the Airbnb dataset.",
         "explanation": "The Airbnb dataset provides insights into various listings and their attributes. One of the key attributes is the 'Room Type'. In this exploration, we'll focus on understanding the distribution of different room types available in the dataset.",
         "codeContent": "pp.distribution(airbnb_data, 'Room Type')",
@@ -129,23 +129,23 @@ const DYNAMIC_INTRODUCTION_DATA = [
             },
             {
                 id: "install2",
-                title: "Importing PivotPal: Access the functionalities of PivotPal in your workspace."
+                title: "2. Importing PivotPal: Access the functionalities of PivotPal in your workspace."
             },
             {
                 id: "function-explanation",
-                title: "2. The 'helper' Function: A guide to the myriad of functions in PivotPal."
+                title: "3. The 'helper' Function: A guide to the myriad of functions in PivotPal."
             },
             {
                 id: "dataset-overview",
-                title: "2. Massive Dataset Analysis: A deep dive into a dataset with over 19 million entries."
+                title: "4. Massive Dataset Analysis: A deep dive into a dataset with over 19 million entries."
             },
             {
                 id: "missing-values",
-                title: "3. Titanic Dataset: Exploring missing data within the Titanic dataset."
+                title: "5. Titanic Dataset: Exploring missing data within the Titanic dataset."
             },
             {
                 id: "room-type-distribution",
-                title: "4. Airbnb Dataset: Analyzing the distribution of 'Room Type'."
+                title: "6. Airbnb Dataset: Analyzing the distribution of 'Room Type'."
             }
         ]
     },
