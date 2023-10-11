@@ -7,7 +7,7 @@ import Link from 'next/link';
 const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Tools', href: '/tools/see-all' },
-  
+
 ]
 const casestudies = [
   { name: 'UK Crime', href: '/case-studies/police' },
@@ -65,9 +65,11 @@ export default function Example() {
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                    onClick={() => setMobileMenuOpen(false)}  // Add this line
                   >
                     {item.name}
                   </Link>
+
                 ))}
               </div>
 
@@ -78,17 +80,29 @@ export default function Example() {
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                    onClick={() => setMobileMenuOpen(false)}  // Add this line
                   >
                     {item.name}
                   </Link>
+
                 ))}
               </div>
-              <Link className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800" href={'/get-started/installation'}>
+              <Link
+                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                href={'/get-started/installation'}
+                onClick={() => setMobileMenuOpen(false)}  // Add this line
+              >
                 Get Started
               </Link>
-              <Link className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800" href={'/tools/under-the-hood'}>
+
+              <Link
+                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+                href={'/tools/under-the-hood'}
+                onClick={() => setMobileMenuOpen(false)}  // Add this line
+              >
                 See Under the Hood
               </Link>
+
             </div>
           </div>
         </Dialog.Panel>
