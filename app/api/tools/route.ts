@@ -87,13 +87,180 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table above lists rows that are duplicated in the dataset along with their count."
     },
+    {
+        "number": 3,
+        "slug": "under-the-hood",
+        "id": "distribution",
+        "title": "Exploring Value Distribution in a Dataset",
+        "overview": "A detailed analysis of the distribution of values for a specified column in a dataset using the PivotPal Python package.",
+        "explanation": "Understanding the distribution of values in a dataset is crucial for data analysis. This function provides insights into the frequency and percentage distribution of unique values in a specified column. It helps in identifying patterns, outliers, and potential data quality issues.",
+        "codeContent": `pp.distribution(df, column_name)
+
+# Code Breakdown:
+
+def.distribution(df, column_name):
+
+# Count Values of column
+counts = df[column_name].value_counts()
+
+# Calculate % distribution
+percentages = ((counts / len(df)) * 100).round(2)
+
+return pd.DataFrame({
+
+    column_name: counts.index,
+    'count': counts.values,
+    '%': percentages.values,
+
+}).sort_values(by='count', ascending=False)`,
+        "tableData": [
+            {
+                "columnName": "Value",
+                "data": ["Value1", "Value2", "Value3"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["100", "50", "25"]
+            },
+            {
+                "columnName": "% Distribution",
+                "data": ["50.0", "25.0", "12.5"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of values in the specified column of the dataset. It provides the count and percentage distribution of each unique value. This helps in understanding the prominence of each value in the dataset and can guide further analysis."
+    },
+    
+    {
+        "number": 4,
+        "slug": "under-the-hood",
+        "id": "unique",
+        "title": "Exploring Unique Values in a Dataset",
+        "overview": "An analysis of the number of unique values for each column in a dataset using the PivotPal Python package.",
+        "explanation": "Identifying the number of unique values in each column of a dataset is essential for understanding data diversity and potential categorical features. This function provides a count of unique values for every column, helping in distinguishing between continuous, categorical, and binary features.",
+        "codeContent": `pp.unique(df)
+
+# Code Breakdown:        
+
+def unique(df):
+
+    unique_counts = df.nunique()
+    
+    unique_df = pd.DataFrame({
+        'Column Name': unique_counts.index,
+        'Unique Count': unique_counts.values
+    })
+    return unique_df.sort_values(by='Unique Count', ascending=False)
+`,
+        "tableData": [
+            {
+                "columnName": "Column Name",
+                "data": ["Column1", "Column2", "Column3"]
+            },
+            {
+                "columnName": "Unique Count",
+                "data": ["10", "5", "2"]
+            }
+        ],
+        "tableSummary": "The table above displays the number of unique values for each column in the dataset. Columns with a lower count of unique values might represent categorical or binary data, while those with a higher count could indicate continuous data. Understanding this distribution is crucial for feature engineering and data preprocessing."
+    },
+    {
+        "number": 3,
+        "slug": "under-the-hood",
+        "id": "missing",
+        "title": "Exploring Missing Values",
+        "overview": "Provides a summary of missing values for each column in the dataset.",
+        "explanation": "This function identifies columns with missing values, providing a count and percentage of missing data. It's crucial for data cleaning and preprocessing.",
+        "codeContent": `pp.missing(your_data)
+        
+def missing(df):
+
+    # Calculate the number of missing values for each column
+    missing_values_count = df.isnull().sum()
+
+    # Calculate the percentage of missing values for each column
+    missing_percentage = round((missing_values_count / len(df)) * 100, 0)
+
+    # Create a DataFrame to display the results
+    statistics_df = pd.DataFrame({
+
+        'Column Name': missing_values_count.index,
+        'Missing Count': missing_values_count.values,
+        'Missing %': missing_percentage.values
+
+    })
+
+    # Filter out columns with no missing values and sort by percentage
+    statistics_df = statistics_df[statistics_df['Missing Count'] > 0].sort_values(by='Missing %', ascending=False)
+
+    return statistics_df`,
+        "tableData": [
+            {
+                "columnName": "Column Name",
+                "data": ["Column1", "Column2", "Column3"]
+            },
+            {
+                "columnName": "Missing Count",
+                "data": ["Count1", "Count2", "Count3"]
+            },
+            {
+                "columnName": "Missing %",
+                "data": ["%", "%", "%"]
+            }
+        ],
+        "tableSummary": "The table above highlights columns with missing values. It provides a count and percentage of missing data for each column, aiding in data quality assessment."
+    },
+    {
+        "number": 5,
+        "slug": "under-the-hood",
+        "id": "datatypes",
+        "title": "Exploring Data Types in a Dataset",
+        "overview": "Provides a summary of data types for each column in the dataset.",
+        "explanation": "Understanding the data types of each column is essential for data preprocessing and analysis. This function provides insights into the data types and their distribution across the dataset.",
+        "codeContent": `pp.datatypes(your_data)
+    
+    def datatypes(df):
+        # Get data types for each column
+        dtypes = df.dtypes
+    
+        # Count the occurrences of each data type
+        dtypes_count = dtypes.value_counts()
+    
+        # Calculate % distribution
+        dtypes_percentage = (dtypes_count / len(dtypes) * 100).round()
+    
+        # Create a DataFrame for the pivot table-like layout
+        pivot_df = pd.DataFrame({
+            'Data Type': dtypes_count.index,
+            'Column Count': dtypes_count.values,
+            '% Distribution': dtypes_percentage.values
+        })
+    
+        return pivot_df`,
+        "tableData": [
+            {
+                "columnName": "Data Type",
+                "data": ["int64", "object", "float64"]
+            },
+            {
+                "columnName": "Column Count",
+                "data": ["3", "2", "1"]
+            },
+            {
+                "columnName": "% Distribution",
+                "data": ["50%", "33.3%", "16.7%"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of data types across the dataset. It provides a count and percentage distribution of each data type, aiding in understanding the nature of data in each column."
+    }
+    
+    
+    
 ];
 
 
 
 const DYNAMIC_INTRODUCTION_DATA = [
    
-
     {
         number: 1,
         slug: "see-all",
@@ -118,6 +285,31 @@ const DYNAMIC_INTRODUCTION_DATA = [
             }
         ]
     },
+    {
+        number: 1, // Represents the sequence or order number of the section.
+        slug: "under-the-hood", // A short label or identifier for the section.
+        topic: "Under the Hood", // The main title or name of the section, indicating a deeper dive into the workings of the tool.
+        overview: "A comprehensive guide to understanding the inner workings and code implementations of the PivotPal Python package.", // A brief description of the section.
+        steps: [ // An array containing a list of functionalities or steps related to the topic.
+            {
+                id: "distribution", // A unique identifier for the step.
+                title: "1. Value Distribution Table: Dive deep into the distribution of values for a specified column. Here, we explore the code that powers this functionality and how it processes data to provide insights." // The title and description of the step, with emphasis on the code implementation.
+            },
+            {
+                id: "unique", // A unique identifier for the step.
+                title: "2. Unique Values in Dataset: Uncover the unique values present in each column. This section breaks down the code that identifies and counts unique values across dataset columns." // The title and description of the step, focusing on the code mechanics.
+            },
+            {
+                id: "missing", // A unique identifier for the step.
+                title: "3. Missing Values Analysis: Identify and understand the gaps in your dataset. We delve into the code that detects missing values, quantifying them for better data quality assessment." // The title and description of the step, highlighting the code's role in the analysis.
+            },
+            {
+                id: "duplicates", // A unique identifier for the step.
+                title: "4. Duplicate Row Analysis: Detect and quantify duplicate rows in your dataset. This section elucidates the code logic that identifies duplicate rows, ensuring data integrity." // The title and description of the step, emphasizing the code's functionality.
+            }
+        ]
+    }
+    
 ];
 
 import { NextResponse } from "next/server"

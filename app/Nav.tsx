@@ -2,10 +2,12 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link';
 
 const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Tools', href: '/tools/see-all' },
+  
 ]
 const casestudies = [
   { name: 'UK Crime', href: '/case-studies/police' },
@@ -20,10 +22,10 @@ export default function Example() {
     <>
       <nav className="flex items-center justify-between p-6 lg:px-8 bg-white dark:bg-black" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">PivotPal.</span>
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white md:text-5xl lg:text-6xl">PivotPal.</h1>
-          </a>
+          </Link>
         </div>
         <div className="flex">
           <button
@@ -41,10 +43,10 @@ export default function Example() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-black/10">
           <div className="flex items-center justify-between">
             <div className="flex lg:flex-1">
-              <a href="/" className="-m-1.5 p-1.5 focus:ring-0">
+              <Link href="/" className="-m-1.5 p-1.5 focus:ring-0">
                 <span className="sr-only">PivotPal.</span>
                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white md:text-5xl lg:text-6xl">PivotPal.</h1>
-              </a>
+              </Link>
             </div>
             <button
               type="button"
@@ -59,31 +61,34 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               <div className="space-y-2 py-6">
                 <p className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'>Case Studies:</p>
                 {casestudies.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
-              <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
+              <Link className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800" href={'/get-started/installation'}>
                 Get Started
-              </a>
+              </Link>
+              <Link className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800" href={'/tools/under-the-hood'}>
+                See Under the Hood
+              </Link>
             </div>
           </div>
         </Dialog.Panel>
