@@ -235,7 +235,7 @@ export default function Home() {
         description={''}
         primaryButtonText={'Get Started Now'}
         primaryButtonLink={'/get-started/installation'}
-        secondaryButtonText={'Learn More'}
+        secondaryButtonText={'The Motivation Behind PP'}
         secondaryButtonLink={'/tools/motivation'}
       />
 
