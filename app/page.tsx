@@ -168,7 +168,7 @@ export default function Home() {
       ),
       title: "Airbnb Data Exploration with PivotPal",
       description:
-        "Embark on a comprehensive exploration of the Airbnb dataset using PivotPal. This tutorial covers dataset overview, data types, missing values, zero values, and value distributions across a dataset of New York Airbnb Records.",
+        "Navigate the Airbnb dataset with PivotPal by your side. This guide delves into dataset overviews, data types, missing values, zero values, and value distributions across New York Airbnb records.",
       link: "/case-studies/airbnb",
       linkText: "Begin the Exploration",
     },
@@ -191,9 +191,9 @@ export default function Home() {
           />
         </svg>
       ),
-      title: "Analyzing the Titanic Dataset with PivotPal",
+      title: "Exploring the Titanic Dataset with PivotPal",
       description:
-        "Utilize PivotPal to delve into the Titanic dataset. Learn how to navigate, analyze, and derive meaningful conclusions from historical data.",
+        "Use PivotPal to traverse the depths of the Titanic dataset. Learn to navigate, scrutinize, and draw significant conclusions from this historical data.",
       link: "/case-studies/titanic",
       linkText: "Start the Tutorial",
     },
@@ -242,10 +242,10 @@ export default function Home() {
 
 
       <ContentSection
-        title={'Elevate Your Data Exploration Journey'}
+        title={'Elevate Your Data Analysis Experience'}
         paragraphs={[
-          `Dive deeper into your data with PivotPal, the Python toolkit engineered for comprehensive data exploration. Whether you're working with vast datasets or intricate spreadsheets, PivotPal empowers you to uncover hidden patterns, anomalies, and insights with unparalleled ease.`,
-          `Beyond just tables, PivotPal is your all-in-one solution for data preprocessing, cleaning, and understanding. It's designed for both beginners and seasoned analysts, ensuring that every piece of data you encounter is transformed into actionable insights. With PivotPal, data exploration isn't just a task; it's an adventure.`,
+          `Dive into your data like never before with PivotPal. Built on the robust foundation of Pandas, this Python toolkit is tailored for in-depth data exploration. From massive datasets to intricate spreadsheets, PivotPal ensures you unearth hidden patterns, anomalies, and insights with unmatched precision.`,
+          `But it's not just about tables. PivotPal is your comprehensive suite for data preprocessing, cleaning, and understanding. Whether you're a novice or a seasoned data analyst, PivotPal ensures every data point you touch turns into actionable insights.`,
         ]}
         images={[
           // You can add image paths here if needed
