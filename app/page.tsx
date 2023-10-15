@@ -1,3 +1,4 @@
+import DarkModeToggle from '@/components/DarkModeToggle';
 import Github from '@/components/Github';
 import ContentSection from '@/components/dynamic/UI/Content'
 import HeroSection from '@/components/dynamic/UI/HeroSection'
@@ -231,7 +232,7 @@ export default function Home() {
         id='getStarted'
         title={'Accelerate your Data Analysis with a Single Import:'}
         subtitle={''}
-        description={''}
+        description={'Unlock the full potential of your data with PivotPal, the ultimate Python toolkit built on Pandas. Dive deeper, analyze smarter, and transform every dataset into actionable insights.'}
         primaryButtonText={'Get Started Now'}
         primaryButtonLink={'/get-started/installation'}
         secondaryButtonText={'About'}
