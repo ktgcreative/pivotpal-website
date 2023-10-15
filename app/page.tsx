@@ -234,7 +234,7 @@ export default function Home() {
         description={''}
         primaryButtonText={'Get Started Now'}
         primaryButtonLink={'/get-started/installation'}
-        secondaryButtonText={'The Motivation'}
+        secondaryButtonText={'About'}
         secondaryButtonLink={'/tools/motivation'}
       />
 
