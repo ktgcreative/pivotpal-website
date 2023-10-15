@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Nav from './Nav'
 import Footer from './Footer'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Nav />
       <div className="px-4 mx-auto max-w-screen-xl">
         {children}
+        <Analytics />
         </div>
         <Footer/>
         </body>
