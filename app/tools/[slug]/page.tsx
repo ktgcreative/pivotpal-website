@@ -17,6 +17,7 @@ interface IntroductionData {
     slug: string;
     topic: string;
     overview: string;
+    overview2: string;
     steps: { id: string, title: string }[];
 }
 
@@ -72,8 +73,8 @@ console.log("/////// post /////" + currentPost)
             <DynamicIntroduction
                 topic={currentIntroduction?.topic || "Default Topic"}
                 overview={currentIntroduction?.overview || "Default Overview"}
-                steps={currentIntroduction?.steps || []}
-            />
+                overview2={currentIntroduction?.overview2 || ""}
+                steps={currentIntroduction?.steps || []}    />
 
             {posts.filter(post => post.slug === params.slug).map(data => <DataStream key={data.id} {...data} />)}
 

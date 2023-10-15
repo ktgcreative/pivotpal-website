@@ -4,7 +4,9 @@ import HeroSection from '@/components/dynamic/UI/HeroSection'
 import Timeline from '@/components/dynamic/UI/TimeLine';
 import TutorialSection from '@/components/dynamic/UI/Tutorial';
 import Introduction from '@/components/dynamic/coding/Introduction';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
 
 
 export default function Home() {
@@ -232,8 +234,8 @@ export default function Home() {
         description={''}
         primaryButtonText={'Get Started Now'}
         primaryButtonLink={'/get-started/installation'}
-        secondaryButtonText={'See all tools'}
-        secondaryButtonLink={'/tools/see-all'}
+        secondaryButtonText={'The Motivation'}
+        secondaryButtonLink={'/tools/motivation'}
       />
 
 

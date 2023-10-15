@@ -17,6 +17,7 @@ interface IntroductionData {
     slug: string;
     topic: string;
     overview: string;
+    overview2: string;
     steps: { id: string, title: string }[];
 }
 
@@ -72,6 +73,7 @@ console.log("/////// post /////" + currentPost)
             <DynamicIntroduction
                 topic={currentIntroduction?.topic || "Default Topic"}
                 overview={currentIntroduction?.overview || "Default Overview"}
+                overview2={currentIntroduction?.overview2 || ""}
                 steps={currentIntroduction?.steps || []}
             />
 

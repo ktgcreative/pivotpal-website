@@ -24,16 +24,20 @@ interface Step {
 interface IntroductionProps {
     topic: string;
     overview: string;
+    overview2: string;
     steps: Step[];
 }
 
-const Introduction: React.FC<IntroductionProps> = ({ topic, overview, steps }) => {
+const Introduction: React.FC<IntroductionProps> = ({ topic, overview, overview2,steps }) => {
     return (
         <section className='md:m-10 lg:m-16'>
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">{topic}</h1>
 
             <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                 {overview}
+            </p>
+            <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                {overview2}
             </p>
 
                 <hr className="mt-6 mb-8 bg-gray-200 dark:bg-gray-700 h-0.5 border-none" />
