@@ -44,7 +44,7 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <div className="flex lg:flex-1">
               <Link href="/" className="-m-1.5 p-1.5 focus:ring-0">
-                <span className="sr-only">PivotPal.</span>
+                <span className="sr-only">PivotPal.info</span>
                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white md:text-5xl lg:text-6xl">PivotPal.</h1>
               </Link>
             </div>
@@ -100,7 +100,7 @@ export default function Example() {
                 href={'/tools/under-the-hood'}
                 onClick={() => setMobileMenuOpen(false)}  // Add this line
               >
-                See Under the Hood
+              See how it works
               </Link>
 
             </div>
