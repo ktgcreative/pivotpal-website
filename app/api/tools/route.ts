@@ -406,12 +406,16 @@ const DYNAMIC_INTRODUCTION_DATA = [
         "overview2": `While these snippets were functional, they often produced outputs that were messy and hard to interpret, especially when shared with peers or presented to instructors and shareholders. This realisation led to the birth of PivotPal, a package designed to streamline the data exploration process and produce clear, structured outputs.`,
         "steps": [
             {
-                "id": "overview",
-                "title": "1. Dataset Overview: A snapshot of the Airbnb dataset."
+                "id": "",
+                "title": "1. It's More Than Just Simplification..."
             },
             {
-                "id": "types",
-                "title": "2. Data Types Distribution: Analyzing the types of data in the dataset."
+                "id": "",
+                "title": "2. Embracing the DRY Principle"
+            },
+            {
+                "id": "",
+                "title": "3. Future Features: AI-Powered Summaries"
             },
         ]
     },
