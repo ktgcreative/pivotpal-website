@@ -232,7 +232,7 @@ export default function Home() {
         id='getStarted'
         title={'Accelerate your Data Analysis with a Single Import:'}
         subtitle={''}
-        description={'Unlock the full potential of your data with PivotPal, the ultimate Python toolkit built on Pandas. Dive deeper, analyze smarter, and transform every dataset into actionable insights.'}
+        description={''}
         primaryButtonText={'Get Started Now'}
         primaryButtonLink={'/get-started/installation'}
         secondaryButtonText={'About'}
