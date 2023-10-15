@@ -41,7 +41,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <p>Star on GitHub</p>
             </Link>
 
-            <h1 className="mb-4 text-5xl py-5 font-extrabold tracking-tight leading-none text-gray-900 m:text-4-xl md:text-5xl lg:text-7xl dark:text-white">{title}</h1>
+            <h1 className="mb-4 text-5xl py-5 font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-7xl dark:text-white">{title}</h1>
 
             <DynamicCodeBox
                 number={0}
