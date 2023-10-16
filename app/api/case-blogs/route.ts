@@ -570,22 +570,39 @@ const DYNAMIC_INTRODUCTION_DATA = [
         ]
     }
 ,    
-    {
-        number: 2,
-        slug: "titanic",
-        topic: "Titanic Data Exploration",
-        overview: "A brief exploration of the Titanic dataset, focusing on missing values and unique data points.",
-        steps: [
-            {
-                id: "missing-values",
-                title: "Missing Data: A look into 'Cabin', 'Age', and 'Embarked'."
-            },
-            {
-                id: "unique-values",
-                title: "Unique Data Values: Highlighting unique counts of coulumns."
-            }
-        ]
-    },
+{
+    "number": 4,
+    "slug": "titanic",
+    "topic": "Titanic Data Exploration",
+    "overview": "This exploration delves deep into the Titanic dataset, a classic in the data science community. The dataset, which contains various features describing the passengers aboard the ill-fated ship, is dissected using the PivotPal Python package. The analysis focuses on understanding the dataset's structure, missing values, unique data points, and the distribution of key features such as age.",
+    "overview2": "Beyond the initial exploration, the study also emphasizes feature engineering, a crucial step in data preprocessing. By extracting titles from names and categorizing age into distinct groups, the analysis unveils patterns that can be instrumental in understanding survival rates, demographics, and social statuses of the passengers. Each step in the exploration is meticulously detailed, providing insights and showcasing the capabilities of the PivotPal Python package in handling and analyzing datasets.",
+    "steps": [
+        {
+            "id": "overview",
+            "title": "1. Dataset Overview: A snapshot of the Titanic dataset's general attributes, revealing its structure, data types, and characteristics."
+        },
+        {
+            "id": "missing-values",
+            "title": "2. Missing Data: A deep dive into the columns with missing values, highlighting the significance of each and potential implications for analysis."
+        },
+        {
+            "id": "unique-values",
+            "title": "3. Unique Data Values: A comprehensive look at the unique values present in each column, emphasizing the distribution and diversity of data within the dataset."
+        },
+        {
+            "id": "age-distribution",
+            "title": "4. Age Distribution: An in-depth analysis of the age distribution of passengers, revealing the diverse age groups present on the ship."
+        },
+        {
+            "id": "age-engineering",
+            "title": "5. Age Category Engineering: The transformation of continuous 'Age' values into discrete age groups, offering a more aggregated view of age distributions."
+        },
+        {
+            "id": "title-extraction",
+            "title": "6. Title Extraction: A feature engineering step that extracts titles from names, providing insights into the social status, gender, and age group of passengers."
+        }
+    ]
+},
     
     {
         number: 4,
