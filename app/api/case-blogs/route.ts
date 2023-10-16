@@ -107,7 +107,7 @@ age_distribution = pp.distribution(titanic_data, 'Age')
     {
         "slug": "titanic",
         "id": "age-engineering",
-        "title": "8. Feature Engineering: Categorizing 'Age' into 'AgeCategory' in the Titanic Dataset using PivotPal",
+        "title": "7. Feature Engineering: Categorizing 'Age' into 'AgeCategory' in the Titanic Dataset using PivotPal",
         "overview": "By leveraging the `pd.cut` function and the PivotPal Python package, we've engineered a new feature, 'AgeCategory', which categorizes passengers into age groups based on their age.",
         "explanation": "The age of passengers aboard the Titanic spans a wide range. To simplify analyses and derive more meaningful insights, we've categorized the continuous 'Age' values into discrete age groups: 'Child', 'Teenager', 'Young Adult', 'Adult', and 'Senior'. This transformation allows for a more aggregated view of age distributions and can reveal patterns related to survival rates based on age groups.",
         "codeContent": `
