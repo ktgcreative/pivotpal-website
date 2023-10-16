@@ -80,7 +80,7 @@ pp.overview(titanic_data)
     {
         "slug": "titanic",
         "id": "age",
-        "title": "6. Distribution Analysis of 'Age' in the Titanic Dataset using PivotPal",
+        "title": "4. Distribution Analysis of 'Age' in the Titanic Dataset using PivotPal",
         "overview": "Using the PivotPal Python package, we've analyzed the age distribution of passengers in the Titanic dataset.",
         "explanation": "The age of passengers aboard the Titanic varies widely, from infants to the elderly. Understanding this distribution can provide insights into the demographics of the ship's passengers and potentially reveal patterns related to survival rates based on age groups.",
         "codeContent": `
@@ -107,7 +107,7 @@ age_distribution = pp.distribution(titanic_data, 'Age')
     {
         "slug": "titanic",
         "id": "age-engineering",
-        "title": "7. Feature Engineering: Categorizing 'Age' into 'AgeCategory' in the Titanic Dataset using PivotPal",
+        "title": "5. Feature Engineering: Categorizing 'Age' into 'AgeCategory' in the Titanic Dataset using PivotPal",
         "overview": "By leveraging the `pd.cut` function and the PivotPal Python package, we've engineered a new feature, 'AgeCategory', which categorizes passengers into age groups based on their age.",
         "explanation": "The age of passengers aboard the Titanic spans a wide range. To simplify analyses and derive more meaningful insights, we've categorized the continuous 'Age' values into discrete age groups: 'Child', 'Teenager', 'Young Adult', 'Adult', and 'Senior'. This transformation allows for a more aggregated view of age distributions and can reveal patterns related to survival rates based on age groups.",
         "codeContent": `
@@ -136,7 +136,7 @@ age_category_distribution = pp.distribution(df, 'AgeCategory')
     {
         "slug": "titanic",
         "id": "title-engineering",
-        "title": "8. Feature Engineering: Extracting 'Title' from 'Name' in the Titanic Dataset using PivotPal",
+        "title": "6. Feature Engineering: Extracting 'Title' from 'Name' in the Titanic Dataset using PivotPal",
         "overview": "Utilizing a custom function and the PivotPal Python package, we've engineered a new feature, 'Title', extracted from the 'Name' column of the Titanic dataset.",
         "explanation": "Names in the Titanic dataset contain titles that can provide insights into the social status, gender, and age group of passengers. By extracting these titles, we can categorize passengers into groups like 'Mr', 'Mrs', 'Master', 'Miss', and 'Other'. This engineered feature can be crucial for understanding patterns related to survival rates based on social status or demographics.",
         "codeContent": `
