@@ -20,7 +20,7 @@ export default function Example() {
 
   return (
     <>
-      <nav className="flex items-center justify-between p-6 lg:px-8 bg-white dark:bg-black" aria-label="Global">
+      <nav className="flex fixed items-center justify-between p-6 lg:px-8 bg-white dark:bg-black" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">PivotPal.</span>
