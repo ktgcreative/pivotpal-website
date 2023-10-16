@@ -8,10 +8,34 @@ const DYNAMIC_CODEBOX_DATA = [
 
     // MISSING VALUES
     {
+        "slug": "titanic",
+        "id": "overview",
+        "title": "1. Overview Analysis of the Titanic Dataset using PivotPal",
+        "overview": "Utilizing the `pp.overview` function from the PivotPal Python package, we've extracted a comprehensive summary of the Titanic dataset.",
+        "explanation": "The Titanic dataset, a classic in the data science community, contains various features describing the passengers aboard the ill-fated ship. With `pp.overview`, we can quickly gain insights into the dataset's structure, missing values, data types, and more. This high-level overview is crucial for understanding the data before diving into deeper analyses.",
+        "codeContent": `
+# Using pp.overview to summarise the Titanic dataset
+pp.overview(titanic_data)
+            `,
+        "tableData": [
+            {
+                "columnName": "Description",
+                "data": ["Total Rows", "Total Columns", "Columns with Missing Values", "Total Duplicate Rows", "Most Frequent Data Type", "Columns with Binary Values", "Columns with Zero Values", "Unique Data Types", "Numeric Columns", "Non-Numeric Columns"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["891", "12", "3", "0", "int64", "2", "4", "3", "7", "5"]
+            }
+        ],
+        "tableSummary": "The table above provides a snapshot of the Titanic dataset's structure and characteristics. With 891 rows and 12 columns, the dataset offers a mix of numeric and non-numeric data. Notably, there are three columns with missing values, which will require attention during the data preprocessing phase. The `pp.overview` function proves invaluable for such quick and informative explorations."
+    },
+    
+    // MISSING VALUES
+    {
         "number": 2,
         "slug": "titanic",
         "id": "missing-values",
-        "title": "Exploring Missing Data in the Titanic Dataset",
+        "title": "2. Exploring Missing Data in the Titanic Dataset",
         "overview": "A deep dive into the missing data within the Titanic dataset using the PivotPal Python package.",
         "explanation": "The Titanic dataset is one of the most popular datasets used in data science. It contains information about the passengers onboard the Titanic, including their age, cabin, and embarkation point. In this exploration, we'll focus on identifying and understanding the missing data within this dataset.",
         "codeContent": "pp.missing(df)",
@@ -36,7 +60,7 @@ const DYNAMIC_CODEBOX_DATA = [
         "number": 3,
         "slug": "titanic",
         "id": "unique-values",
-        "title": "Exploring Unique Data Values in the Titanic Dataset",
+        "title": "3. Exploring Unique Data in the Titanic Dataset",
         "overview": "A comprehensive look at the unique data values within the Titanic dataset using the PivotPal Python package.",
         "explanation": "The Titanic dataset provides a wealth of information about the passengers onboard. One of the key steps in data exploration is understanding the uniqueness of data values. In this exploration, we'll identify and understand the unique values present in each column of the Titanic dataset.",
         "codeContent": "pp.unique(df)",
@@ -52,7 +76,103 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table above highlights the unique data values in each column of the Titanic dataset. Columns like 'PassengerId' and 'Name' have unique values for each entry, while columns like 'Sex' and 'Survived' have only 2 unique values. This information is crucial for understanding the distribution and diversity of data within the dataset."
     },    
+    // FEATURE ENGINEERING
+    {
+        "slug": "titanic",
+        "id": "age",
+        "title": "6. Distribution Analysis of 'Age' in the Titanic Dataset using PivotPal",
+        "overview": "Using the PivotPal Python package, we've analyzed the age distribution of passengers in the Titanic dataset.",
+        "explanation": "The age of passengers aboard the Titanic varies widely, from infants to the elderly. Understanding this distribution can provide insights into the demographics of the ship's passengers and potentially reveal patterns related to survival rates based on age groups.",
+        "codeContent": `
+# Using PivotPal to get 'Age' feature  and it's distribution
+age_distribution = pp.distribution(titanic_data, 'Age')
+            `,
+        "tableData": [
+            {
+                "columnName": "Age",
+                "data": ["24.00", "22.00", "18.00", "19.00", "28.00", "...", "66.00", "0.67", "0.42", "34.50", "74.00"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["30", "27", "26", "25", "25", "...", "1", "1", "1", "1", "1"]
+            },
+            {
+                "columnName": "%",
+                "data": ["3.37", "3.03", "2.92", "2.81", "2.81", "...", "0.11", "0.11", "0.11", "0.11", "0.11"]
+            }
+        ],
+        "tableSummary": "The table above showcases the age distribution of passengers aboard the Titanic. The most common age is 24, with 30 passengers (3.37% of the dataset). The dataset contains a wide range of ages, from infants (e.g., 0.42 years) to elderly passengers (e.g., 74 years). This distribution helps us understand the diverse age groups present on the ship. Now it's time to feature engineer..."
+    },
+    // FEATURE ENGINEERING TITLE
+    {
+        "slug": "titanic",
+        "id": "age-engineering",
+        "title": "8. Feature Engineering: Categorizing 'Age' into 'AgeCategory' in the Titanic Dataset using PivotPal",
+        "overview": "By leveraging the `pd.cut` function and the PivotPal Python package, we've engineered a new feature, 'AgeCategory', which categorizes passengers into age groups based on their age.",
+        "explanation": "The age of passengers aboard the Titanic spans a wide range. To simplify analyses and derive more meaningful insights, we've categorized the continuous 'Age' values into discrete age groups: 'Child', 'Teenager', 'Young Adult', 'Adult', and 'Senior'. This transformation allows for a more aggregated view of age distributions and can reveal patterns related to survival rates based on age groups.",
+        "codeContent": `
+# Using pd.cut to categorize 'Age' into 'AgeCategory'
+df['AgeCategory'] = pd.cut(df['Age'], bins=[0, 12, 19, 30, 50, 100], labels=['Child', 'Teenager', 'Young Adult', 'Adult', 'Senior'])
+            
+# Using PivotPal to get a distribution of the newly engineered 'AgeCategory' feature
+age_category_distribution = pp.distribution(df, 'AgeCategory')
+            `,
+        "tableData": [
+            {
+                "columnName": "AgeCategory",
+                "data": ["Young Adult", "Adult", "Teenager", "Child", "Senior"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["245", "241", "95", "69", "64"]
+            },
+            {
+                "columnName": "%",
+                "data": ["27.50", "27.05", "10.66", "7.74", "7.18"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of age categories among passengers aboard the Titanic. 'Young Adult' and 'Adult' are the most prevalent age categories, accounting for over half of the dataset. This engineered 'AgeCategory' feature simplifies the age data and provides a clearer perspective on the age demographics of the passengers."
+    },    
+    {
+        "slug": "titanic",
+        "id": "title-engineering",
+        "title": "8. Feature Engineering: Extracting 'Title' from 'Name' in the Titanic Dataset using PivotPal",
+        "overview": "Utilizing a custom function and the PivotPal Python package, we've engineered a new feature, 'Title', extracted from the 'Name' column of the Titanic dataset.",
+        "explanation": "Names in the Titanic dataset contain titles that can provide insights into the social status, gender, and age group of passengers. By extracting these titles, we can categorize passengers into groups like 'Mr', 'Mrs', 'Master', 'Miss', and 'Other'. This engineered feature can be crucial for understanding patterns related to survival rates based on social status or demographics.",
+        "codeContent": `
+# Custom function to extract titles from the 'Name' column
 
+# Extract titles using a custom function
+def extract_specific_titles(name):
+
+    title = name.split(',')[1].split('.')[0].strip()
+
+    if title in ['Mr', 'Mrs', 'Master', 'Miss']:
+        return title
+    else:
+        return 'Other'
+
+df['Title'] = df['Name'].apply(extract_specific_titles)
+
+# Using PivotPal to get a distribution of the newly engineered 'Title' feature
+title_distribution = pp.distribution(df, 'Title')
+            `,
+        "tableData": [
+            {
+                "columnName": "Title",
+                "data": ["Mr", "Miss", "Mrs", "Master", "Other"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["517", "182", "125", "40", "27"]
+            },
+            {
+                "columnName": "%",
+                "data": ["58.02", "20.43", "14.03", "4.49", "3.03"]
+            }
+        ],
+        "tableSummary": "The table above showcases the distribution of titles among passengers aboard the Titanic. The most prevalent title is 'Mr', accounting for 58.02% of the dataset. The 'Other' category captures titles that are less common. This engineered 'Title' feature provides a new perspective on the passengers and can be instrumental in further analyses."
+    },    
 
            /////////////////
     // -- // CRIME DATA  // -- //
@@ -159,7 +279,7 @@ const DYNAMIC_CODEBOX_DATA = [
     {
         "number": 7,
         "slug": "police",
-        "id": "crime-type-distribution",
+        "id": "feature-engineering",
         "title": "5. Feature Engineering: Mapping 'Reported by' to 'Geographical Region'",
         "overview": "Using the provided mapping of police forces to their respective geographical regions, we've engineered a new feature, 'Geographical_Region', in our crime dataset, which contains over 19 million entries.",
         "explanation": "Datasets often require additional context or categorization to derive meaningful insights. In this section, we've taken the 'Reported by' column, which indicates the police force that reported the crime, and mapped it to a broader 'Geographical_Region'. This allows for a more aggregated view of crime distribution across the UK, facilitating regional comparisons and analyses.",
