@@ -1,5 +1,12 @@
 const DYNAMIC_CODEBOX_DATA = [
 
+    
+           //////////////////
+    // -- // TITANIC DATA // -- //
+         //////////////////
+
+
+    // MISSING VALUES
     {
         "number": 2,
         "slug": "titanic",
@@ -24,6 +31,7 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table above showcases the columns in the Titanic dataset with missing values. The 'Cabin' column has the highest number of missing values, with 687 missing entries, accounting for 77% of the total data. The 'Age' column has 177 missing values, which is 20% of the data. Lastly, the 'Embarked' column has only 2 missing values, making up 0% of the dataset."
     },
+    // UNIQUE VALUES
     {
         "number": 3,
         "slug": "titanic",
@@ -46,14 +54,12 @@ const DYNAMIC_CODEBOX_DATA = [
     },    
 
 
+           /////////////////
+    // -- // CRIME DATA  // -- //
+         /////////////////
 
 
-    // -- // CRIME DATA // -- //
-
-
-
-
-
+    // OVERVIEW
     {
         "number": 4,
         "slug": "police",
@@ -74,6 +80,7 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table provides a snapshot of the crime dataset. Notably, with 19 million entries, it's a sizable dataset. The majority data type is 'object', and there are both numeric and non-numeric columns. Interestingly, despite its size, there are no columns with binary or zero values."
     },
+    // MISSING CRIME VALUES
     {
         "number": 5,
         "slug": "police",
@@ -98,6 +105,7 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table above showcases the columns in the crime dataset with missing values. The 'Context' column has the highest number of missing values, accounting for 100% of the total data. Other columns like 'Last outcome category' and 'Crime ID' also have significant missing values."
     },
+    // OUTCOME DISTRIBUTION VALUES
     {
         "number": 6,
         "slug": "police",
@@ -122,6 +130,7 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table illustrates the distribution of outcomes in the 'Last outcome category'. The most frequent outcome is 'Investigation complete; no suspect identified' with over 6.1 million occurrences, accounting for 31.82% of the dataset. This is followed by 'Unable to prosecute suspect' with nearly 5 million occurrences. The data provides valuable insights into the resolution of reported crimes."
     },
+    // CRIME-TYPE DISTRIBUTION VALUES
     {
         "number": 7,
         "slug": "police",
@@ -146,10 +155,121 @@ const DYNAMIC_CODEBOX_DATA = [
         ],
         "tableSummary": "The table above highlights the distribution of various crime types in the dataset. 'Violence and sexual offences' is the most common crime type, accounting for 33.63% of the dataset. This is followed by 'Anti-social behaviour' and 'Public order'. The data provides a comprehensive view of the nature of reported crimes."
     },
+    // GEOGRAOHICAL DISTRIBUTION VALUES
+    {
+        "number": 7,
+        "slug": "police",
+        "id": "crime-type-distribution",
+        "title": "5. Feature Engineering: Mapping 'Reported by' to 'Geographical Region'",
+        "overview": "Using the provided mapping of police forces to their respective geographical regions, we've engineered a new feature, 'Geographical_Region', in our crime dataset, which contains over 19 million entries.",
+        "explanation": "Datasets often require additional context or categorization to derive meaningful insights. In this section, we've taken the 'Reported by' column, which indicates the police force that reported the crime, and mapped it to a broader 'Geographical_Region'. This allows for a more aggregated view of crime distribution across the UK, facilitating regional comparisons and analyses.",
+       "codeContent": `
+# Drop Ireland and Wales to focus on English Regions
+
+forces_to_drop = ['Police Service of Northern Ireland', 'Dyfed-Powys Police', 'North Wales Police', 'South Wales Police', 'Gwent Police']
+
+data = data[~data['Reported by'].isin(forces_to_drop)]
+
+geographical_regions = {
+    "South West England": [
+        "Avon and Somerset Constabulary",
+        "Devon & Cornwall Police",
+        "Dorset Police",
+        "Gloucestershire Constabulary",
+        "Wiltshire Police"
+    ],
+    "South East England": [
+        "Hampshire Constabulary",
+        "Kent Police",
+        "Surrey Police",
+        "Sussex Police",
+        "Thames Valley Police"
+    ],
+    "East of England": [
+        "Bedfordshire Police",
+        "Cambridgeshire Constabulary",
+        "Essex Police",
+        "Hertfordshire Constabulary",
+        "Norfolk Constabulary",
+        "Suffolk Constabulary"
+    ],
+    "London": [
+        "Metropolitan Police Service",
+        "City of London Police"
+    ],
+    "West Midlands": [
+        "Staffordshire Police",
+        "Warwickshire Police",
+        "West Mercia Police",
+        "West Midlands Police"
+    ],
+    "East Midlands": [
+        "Derbyshire Constabulary",
+        "Leicestershire Police",
+        "Lincolnshire Police",
+        "Northamptonshire Police",
+        "Nottinghamshire Police"
+    ],
+    "North West England": [
+        "Cheshire Constabulary",
+        "Cumbria Constabulary",
+        "Greater Manchester Police",
+        "Lancashire Constabulary",
+        "Merseyside Police"
+    ],
+    "North East England": [
+        "Cleveland Police",
+        "Durham Constabulary",
+        "Northumbria Police",
+        "North Yorkshire Police"
+    ],
+    "Yorkshire and the Humber": [
+        "Humberside Police",
+        "South Yorkshire Police",
+        "West Yorkshire Police"
+    ],
+    "Specialized/Other": [
+        "British Transport Police",
+    ]
+}
+
+# Feature engineering Forces by Geographical Regions
+
+def get_geographical_region(force_name):
+    for region, forces in geographical_regions.items():
+        if force_name in forces:
+            return region
+    return None
+
+data['Geographical_Region'] = data['Reported by'].apply(get_geographical_region)
 
 
-    // AIRBNB DATA
+# See Crime Distribution around different Geographical Regions
 
+pp.distribution(data, 'Geographical_Region')
+        `,
+        "tableData": [
+            {
+                "columnName": "Geographical Region",
+                "data": ["London", "South East England", "West Midlands", "Yorkshire and the Humber", "East of England", "North West England", "East Midlands", "South West England", "North East England", "Specialized/Other"]
+            },
+            {
+                "columnName": "Count",
+                "data": ["3,446,252", "2,622,798", "2,013,252", "1,896,734", "1,781,383", "1,621,231", "1,522,387", "1,396,609", "1,342,356", "150,579"]
+            },
+            {
+                "columnName": "%",
+                "data": ["19.37", "14.74", "11.31", "10.66", "10.01", "9.11", "8.56", "7.85", "7.54", "0.85"]
+            }
+        ],
+        "tableSummary": "The table above highlights the distribution of crimes across different geographical regions in the UK. 'London' has the highest count, accounting for 19.37% of the dataset. This is followed by 'South East England' and 'West Midlands'. The data provides a comprehensive view of the geographical distribution of reported crimes."
+     },
+
+           /////////////////
+    // -- // AIRBNB DATA // -- //
+         /////////////////
+
+   
     {
         "number": 1,
         "slug": "airbnb",
