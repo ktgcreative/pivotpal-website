@@ -79,7 +79,7 @@ pp.overview(titanic_data)
     // FEATURE ENGINEERING
     {
         "slug": "titanic",
-        "id": "age",
+        "id": "age-distribution",
         "title": "4. Distribution Analysis of 'Age' in the Titanic Dataset using PivotPal",
         "overview": "Using the PivotPal Python package, we've analyzed the age distribution of passengers in the Titanic dataset.",
         "explanation": "The age of passengers aboard the Titanic varies widely, from infants to the elderly. Understanding this distribution can provide insights into the demographics of the ship's passengers and potentially reveal patterns related to survival rates based on age groups.",
@@ -135,7 +135,7 @@ age_category_distribution = pp.distribution(df, 'AgeCategory')
     },    
     {
         "slug": "titanic",
-        "id": "title-engineering",
+        "id": "title-extraction",
         "title": "6. Feature Engineering: Extracting 'Title' from 'Name' in the Titanic Dataset using PivotPal",
         "overview": "Utilizing a custom function and the PivotPal Python package, we've engineered a new feature, 'Title', extracted from the 'Name' column of the Titanic dataset.",
         "explanation": "Names in the Titanic dataset contain titles that can provide insights into the social status, gender, and age group of passengers. By extracting these titles, we can categorize passengers into groups like 'Mr', 'Mrs', 'Master', 'Miss', and 'Other'. This engineered feature can be crucial for understanding patterns related to survival rates based on social status or demographics.",
