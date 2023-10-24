@@ -1,6 +1,38 @@
 import DataStream from "@/components/dynamic/coding/BlogSection";
 import DynamicIntroduction from "@/components/dynamic/coding/DynamicIntroduction";
 import Link from "next/link";
+import Introduction from "@/components/dynamic/coding/Introduction";
+
+import type { Metadata, ResolvingMetadata } from 'next';
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+    const apiUrl = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000/api/get-started'
+        : 'https://pivotpal.vercel.app/api/get-started';
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    const posts: CodeBoxData[] = data.codeBoxData;
+    const introductions: IntroductionData[] = data.introductionData;
+    const currentPost = posts?.find(post => post.slug === params.slug);
+    const currentIntroduction = introductions?.find(introduction => introduction.slug === params.slug);
+
+    const title = `${currentIntroduction?.topic}` || `Blog Post: ${params.slug}`;
+    const description = currentPost?.overview || `Detailed overview of the blog post with slug: ${params.slug}`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'article',
+            // You can add an image URL if you have one
+            // images: [currentPost?.imageUrl]
+        },
+    };
+}
 
 interface CodeBoxData {
     number: number;
@@ -55,15 +87,11 @@ export default async function BlogPostPage({ params }: Props) {
     const currentIntroduction = introduction?.find(intro => intro.slug === params.slug);
     const currentPost = posts?.find(post => post.slug === params.slug);
 
-    console.log(currentIntroduction)
-
     if (!currentPost) {
         return <div>Post not found!</div>;
     }
 
 
-    console.log(currentIntroduction)
-console.log("/////// post /////" + currentPost)
 
 
     return (

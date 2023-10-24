@@ -2,6 +2,7 @@ import DataStream from "@/components/dynamic/coding/BlogSection";
 import DynamicIntroduction from "@/components/dynamic/coding/DynamicIntroduction";
 import Link from "next/link";
 
+
 interface CodeBoxData {
     number: number;
     slug: string;
@@ -28,6 +29,37 @@ interface IntroductionData {
 
 interface Props {
     params: { slug: string }
+}
+
+import type { Metadata, ResolvingMetadata } from 'next';
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+    const apiUrl = process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000/api/get-started'
+        : 'https://pivotpal.vercel.app/api/get-started';
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    const posts: CodeBoxData[] = data.codeBoxData;
+    const introductions: IntroductionData[] = data.introductionData;
+    const currentPost = posts?.find(post => post.slug === params.slug);
+    const currentIntroduction = introductions?.find(introduction => introduction.slug === params.slug);
+
+    const title = `${currentIntroduction?.topic}` || `Blog Post: ${params.slug}`;
+    const description = `${currentIntroduction?.overview}` || `Detailed overview of the blog post with slug: ${params.slug}`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: 'article',
+            // You can add an image URL if you have one
+            // images: [currentPost?.imageUrl]
+        },
+    };
 }
 
 
