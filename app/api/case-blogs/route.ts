@@ -85,7 +85,7 @@ pp.overview(titanic_data)
         "explanation": "The age of passengers aboard the Titanic varies widely, from infants to the elderly. Understanding this distribution can provide insights into the demographics of the ship's passengers and potentially reveal patterns related to survival rates based on age groups.",
         "codeContent": `
 # Using PivotPal to get 'Age' feature  and it's distribution
-age_distribution = pp.distribution(titanic_data, 'Age')
+pp.distribution(titanic_data, 'Age')
             `,
         "tableData": [
             {
@@ -115,7 +115,7 @@ age_distribution = pp.distribution(titanic_data, 'Age')
 df['AgeCategory'] = pd.cut(df['Age'], bins=[0, 12, 19, 30, 50, 100], labels=['Child', 'Teenager', 'Young Adult', 'Adult', 'Senior'])
             
 # Using PivotPal to get a distribution of the newly engineered 'AgeCategory' feature
-age_category_distribution = pp.distribution(df, 'AgeCategory')
+pp.distribution(df, 'AgeCategory')
             `,
         "tableData": [
             {
@@ -155,7 +155,7 @@ def extract_specific_titles(name):
 df['Title'] = df['Name'].apply(extract_specific_titles)
 
 # Using PivotPal to get a distribution of the newly engineered 'Title' feature
-title_distribution = pp.distribution(df, 'Title')
+pp.distribution(df, 'Title')
             `,
         "tableData": [
             {
